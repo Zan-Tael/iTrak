@@ -366,12 +366,27 @@ public class InsertForm_Resident extends javax.swing.JFrame {
             stmnt.setString(21, weight.getText());
             stmnt.setString(22, emailAddress.getText());
             
-            
             InputStream onebyone = new FileInputStream(""+fileName1x1.getText()+"");
-            stmnt.setBlob(23, onebyone);
-            
             InputStream signature = new FileInputStream(""+fileNameSignature.getText()+"");
-            stmnt.setBlob(24, signature);
+           
+            if(fileName1x1 == null){
+                fileName1x1.setText("C:\\Users\\user\\Documents\\PicturesUsed\\default1x1.jpg");
+                stmnt.setBlob(23, onebyone);
+            
+                }
+            
+            else{
+                stmnt.setBlob(23, onebyone);
+                }
+            
+            if(fileNameSignature == null){
+                fileNameSignature.setText("C:\\Users\\user\\Documents\\PicturesUsed\\signatureDefault.png");
+                stmnt.setBlob(24, signature);
+                }
+            
+            else{
+                stmnt.setBlob(24, signature);
+                }
             
             stmnt.execute();
             System.out.println("Tama ka na pre");
@@ -379,7 +394,7 @@ public class InsertForm_Resident extends javax.swing.JFrame {
             }
 
             catch(Exception e){
-                JOptionPane.showMessageDialog(this,"hulaan mo ano problema nanaman");
+                
                 System.err.println(e);
             }
         

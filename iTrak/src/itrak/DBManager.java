@@ -15,6 +15,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import static javaapplication2.UpdateForm_Resident.DB_URL;
+import static javaapplication2.UpdateForm_Resident.PASS;
+import static javaapplication2.UpdateForm_Resident.USER;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -427,8 +430,23 @@ public class DBManager extends javax.swing.JFrame {
        
        this.dispose();
        new UpdateForm_Resident().setVisible(true); 
-      
        
+       try{
+       Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+       Statement statement = conn.createStatement();
+       String sql = "SELECT * FROM MOCKDATABASEFORITRAK WHERE ID like '%" + txtID.getText() + "%'";
+            ResultSet result = statement.executeQuery(sql);
+                while(result.next()){
+                    
+                    
+                }
+            
+            
+            
+       }
+       
+       catch(Exception e){
+       }
 
     }//GEN-LAST:event_btnUpdateActionPerformed
 

@@ -30,7 +30,7 @@ public class B_SignIn extends javax.swing.JFrame {
         main = new javax.swing.JPanel();
         leftPanel = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
-        javax.swing.JTextField email = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         emailSeparator = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -41,36 +41,50 @@ public class B_SignIn extends javax.swing.JFrame {
 
         jToggleButton1.setText("jToggleButton1");
 
+        jToggleButton1.setText("jToggleButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("iTrak: Sign-In");
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         main.setBackground(new java.awt.Color(61, 178, 255));
         main.setPreferredSize(new java.awt.Dimension(800, 500));
 
-        leftPanel.setBackground(new java.awt.Color(0, 0, 0));
+        leftPanel.setBackground(new java.awt.Color(67, 194, 225));
+        leftPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setFont(new java.awt.Font("Segoe UI", 1, 60)); // NOI18N
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setText("iTrak");
+        leftPanel.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
-        email.setBackground(new java.awt.Color(0, 0, 0));
+        email.setBackground(new java.awt.Color(67, 194, 225));
         email.setForeground(new java.awt.Color(255, 255, 255));
         email.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         email.setCaretColor(new java.awt.Color(255, 255, 255));
+        leftPanel.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 222, 200, 25));
+        leftPanel.add(emailSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 247, 200, 10));
+        leftPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 315, 200, 10));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail Address");
+        leftPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 202, -1, -1));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
+        leftPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 270, -1, -1));
 
-        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.setBackground(new java.awt.Color(67, 194, 225));
         jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setToolTipText("");
         jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPasswordField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        leftPanel.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 290, 200, 25));
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Sign-in to continue.");
+        leftPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -197,6 +211,7 @@ public class B_SignIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
+    private javax.swing.JTextField email;
     private javax.swing.JSeparator emailSeparator;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

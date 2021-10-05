@@ -9,12 +9,12 @@ package itrak;
  *
  * @author elain
  */
-public class I_Produce extends javax.swing.JFrame {
+public class K_InsertOfficial extends javax.swing.JFrame {
 
     /**
-     * Creates new form I_Produce
+     * Creates new form K_InsertOfficial
      */
-    public I_Produce() {
+    public K_InsertOfficial() {
         initComponents();
     }
 
@@ -28,9 +28,6 @@ public class I_Produce extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-<<<<<<<< HEAD:iTrak/src/itrak/I_Produce.java
-        jButton2 = new javax.swing.JButton();
-========
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,22 +47,10 @@ public class I_Produce extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
->>>>>>>> e2ebe50d3a7f48ab0419aff8f3f78884746cad76:iTrak/src/itrak/D_InsertData.java
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(67, 194, 225));
-<<<<<<<< HEAD:iTrak/src/itrak/I_Produce.java
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-========
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +142,7 @@ public class I_Produce extends javax.swing.JFrame {
                             .addComponent(jTextField6)
                             .addComponent(jTextField7)
                             .addComponent(jTextField8))))
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,9 +191,8 @@ public class I_Produce extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
                 .addComponent(jButton11)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
->>>>>>>> e2ebe50d3a7f48ab0419aff8f3f78884746cad76:iTrak/src/itrak/D_InsertData.java
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,11 +208,6 @@ public class I_Produce extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<<< HEAD:iTrak/src/itrak/I_Produce.java
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-========
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -236,7 +215,6 @@ public class I_Produce extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
->>>>>>>> e2ebe50d3a7f48ab0419aff8f3f78884746cad76:iTrak/src/itrak/D_InsertData.java
 
     /**
      * @param args the command line arguments
@@ -255,29 +233,25 @@ public class I_Produce extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(I_Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(K_InsertOfficial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(I_Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(K_InsertOfficial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(I_Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(K_InsertOfficial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(I_Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(K_InsertOfficial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new I_Produce().setVisible(true);
+                new K_InsertOfficial().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<<< HEAD:iTrak/src/itrak/I_Produce.java
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
-========
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JLabel jLabel1;
@@ -298,6 +272,5 @@ public class I_Produce extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
->>>>>>>> e2ebe50d3a7f48ab0419aff8f3f78884746cad76:iTrak/src/itrak/D_InsertData.java
     // End of variables declaration//GEN-END:variables
 }

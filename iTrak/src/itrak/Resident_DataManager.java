@@ -1,6 +1,4 @@
 package itrak;
-
-import itrak.F_Officials;          
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -18,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-public class J_Database extends javax.swing.JFrame {
+public class Resident_DataManager extends javax.swing.JFrame {
 
     static final String USER = "system"; //Database Username
     static final String PASS = "Admin123"; //Your Account Password
@@ -27,11 +25,70 @@ public class J_Database extends javax.swing.JFrame {
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
-    public J_Database() {
+    public Resident_DataManager() {
         initComponents();
         Refresh();
     }
+    
+    public void Update(){
+       try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             
+            Statement statement = conn.createStatement();
+             
+            String sql = "SELECT * FROM MOCKDATABASEFORITRAK WHERE ID like '%" + txtID.getText() + "%'";
+            ResultSet result = statement.executeQuery(sql);
+                while(result.next()){
+                    //code here
+                }
+            conn.close();
+       }
+       catch(Exception e){
+            System.out.println(e.getMessage());
+       }
+        
+    } 
+    
+    public void Refresh(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
+            Statement st = con.createStatement();
+
+            String sql = "SELECT * FROM mockdatabaseforitrak ORDER BY id ASC";
+            ResultSet rs = st.executeQuery(sql);
+
+            DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+            tblModel.setRowCount(0);
+
+            while(rs.next()){
+                String id = String.valueOf(rs.getInt("ID"));
+                String lastname = rs.getString("LASTNAME");
+                String firstname = rs.getString("FIRSTNAME");
+                String middlename = rs.getString("MIDDLENAME");
+                String suffix  = rs.getString("SUFFIX");
+                String sex = rs.getString("SEX");
+                String gender = rs.getString("GENDER");
+                String birthdate = rs.getString("BIRTHDATE");
+                String telly = rs.getString("TELEPHONENUMBER");
+                String mobile = rs.getString("MOBILENUMBER");
+                String email = rs.getString("EMAILADDRESS");
+                String status = rs.getString("STATUS");
+
+                String tbData[] = {id, lastname, firstname, middlename, suffix, sex, gender, birthdate, telly, mobile, email, status };
+
+                tblModel.addRow(tbData);
+            }
+            con.close();
+        }
+
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,6 +112,7 @@ public class J_Database extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         mobileField = new javax.swing.JTextField();
         tellyField = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
@@ -75,11 +133,8 @@ public class J_Database extends javax.swing.JFrame {
         aboutUs = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         aboutUsLabel = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -219,6 +274,9 @@ public class J_Database extends javax.swing.JFrame {
         main.add(mobileField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 140, -1));
         main.add(tellyField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 140, -1));
 
+        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
+        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
+
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -338,9 +396,6 @@ public class J_Database extends javax.swing.JFrame {
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
 
-        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -353,165 +408,15 @@ public class J_Database extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void Update(){
-       try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             
-            Statement statement = conn.createStatement();
-             
-            String sql = "SELECT * FROM MOCKDATABASEFORITRAK WHERE ID like '%" + txtID.getText() + "%'";
-            ResultSet result = statement.executeQuery(sql);
-                while(result.next()){
-                    //code here
-                }
-            conn.close();
-       }
-       catch(Exception e){
-            System.out.println(e.getMessage());
-       }
-        
-    } 
-    
-    public void Refresh(){
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            Statement st = con.createStatement();
-
-            String sql = "SELECT * FROM mockdatabaseforitrak ORDER BY id ASC";
-            ResultSet rs = st.executeQuery(sql);
-
-            DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-            tblModel.setRowCount(0);
-
-            while(rs.next()){
-                String id = String.valueOf(rs.getInt("ID"));
-                String lastname = rs.getString("LASTNAME");
-                String firstname = rs.getString("FIRSTNAME");
-                String middlename = rs.getString("MIDDLENAME");
-                String suffix  = rs.getString("SUFFIX");
-                String sex = rs.getString("SEX");
-                String gender = rs.getString("GENDER");
-                String birthdate = rs.getString("BIRTHDATE");
-                String telly = rs.getString("TELEPHONENUMBER");
-                String mobile = rs.getString("MOBILENUMBER");
-                String email = rs.getString("EMAILADDRESS");
-                String status = rs.getString("STATUS");
-
-                String tbData[] = {id, lastname, firstname, middlename, suffix, sex, gender, birthdate, telly, mobile, email, status };
-
-                tblModel.addRow(tbData);
-            }
-            con.close();
-        }
-
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         // TODO add your handling code here:
 
-        char c = evt.getKeyChar();
+        this.dispose();
+        new Resident_Insert().setVisible(true);
 
-        if(!Character.isDigit(c)){
-            evt.consume();
-        }
-
-    }//GEN-LAST:event_txtIDKeyTyped
-
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
-            
-        
-          try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM MOCKDATABASEFORITRAK WHERE ID like '%" + txtID.getText() + "%'");
-            ResultSet result = stmnt.executeQuery();
-            
-            DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-            
-            int selectRow = jTable1.getSelectedRow();
-            Object middle = tblModel.getValueAt(selectRow,4);
-            Object suffix = tblModel.getValueAt(selectRow,5);
-                    
-            
-        while(result.next()){
-                    
-                        txtID.setText(tblModel.getValueAt(selectRow,0).toString());
-        /* conditions if yung middle name or suffic is empty */                
-               if (middle == null){   
-                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString());
-               }
-               
-               else if(suffix == null){
-                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,5).toString());  
-               }
-               
-               else if (middle == null & suffix == null){
-                   nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
-               }
-               else{
-                       nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
-               }
-               
-                        addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
-                        mobileField.setText(result.getString("MobileNumber"));
-                        tellyField.setText(result.getString("TelephoneNumber"));
-                        
-                        byte[] image1x1 = result.getBytes("Image1");
-                        BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                        ImageIcon iconimage = new ImageIcon(Img1x1);
-                        lblIcon.setIcon(iconimage);
-                        
-            }           
-        conn.close();
-                
-        }
-
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,"Error ka nanaman pards");
-            System.out.println(e.getMessage());
-        }
-        
-
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-   
-    }//GEN-LAST:event_btnRefreshActionPerformed
-
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
-
-        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-        tblModel.setRowCount(0);
-
-        txtID.setText("");
-        nameField.setText("");
-        addressField.setText("");
-        mobileField.setText("");
-        tellyField.setText("");
-        lblIcon.setIcon(null);
-
-    }//GEN-LAST:event_btnClearActionPerformed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-       Update();
-       this.dispose();
-       new UpdateForm_Resident().setVisible(true); 
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -539,53 +444,138 @@ public class J_Database extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        Update();
+        this.dispose();
+        new Resident_Update().setVisible(true);
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
- 
-       this.dispose();
-       new InsertForm_Resident().setVisible(true); 
-        
-    }//GEN-LAST:event_btnInsertActionPerformed
+
+        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+        tblModel.setRowCount(0);
+
+        txtID.setText("");
+        nameField.setText("");
+        addressField.setText("");
+        mobileField.setText("");
+        tellyField.setText("");
+        lblIcon.setIcon(null);
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM MOCKDATABASEFORITRAK WHERE ID like '%" + txtID.getText() + "%'");
+            ResultSet result = stmnt.executeQuery();
+
+            DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+
+            int selectRow = jTable1.getSelectedRow();
+            Object middle = tblModel.getValueAt(selectRow,4);
+            Object suffix = tblModel.getValueAt(selectRow,5);
+
+            while(result.next()){
+
+                txtID.setText(tblModel.getValueAt(selectRow,0).toString());
+                /* conditions if yung middle name or suffic is empty */
+                if (middle == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString());
+                }
+
+                else if(suffix == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,5).toString());
+                }
+
+                else if (middle == null & suffix == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
+                }
+                else{
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
+                }
+
+                addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
+                mobileField.setText(result.getString("MobileNumber"));
+                tellyField.setText(result.getString("TelephoneNumber"));
+
+                byte[] image1x1 = result.getBytes("Image1");
+                BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                ImageIcon iconimage = new ImageIcon(Img1x1);
+                lblIcon.setIcon(iconimage);
+
+            }
+            conn.close();
+
+        }
+
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error ka nanaman pards");
+            System.out.println(e.getMessage());
+        }
+
+    }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTable1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentResized
         // TODO add your handling code here:
         TableColumnModel columnModel = jTable1.getColumnModel();
-            columnModel.getColumn(0).setPreferredWidth(50);
-            columnModel.getColumn(1).setPreferredWidth(150);
-            columnModel.getColumn(2).setPreferredWidth(150);
-            columnModel.getColumn(3).setPreferredWidth(150);  
-            columnModel.getColumn(4).setPreferredWidth(50);
-            columnModel.getColumn(5).setPreferredWidth(50);
-            columnModel.getColumn(6).setPreferredWidth(80);
-            columnModel.getColumn(7).setPreferredWidth(130);
-            columnModel.getColumn(8).setPreferredWidth(130);
-            columnModel.getColumn(9).setPreferredWidth(130);
-            columnModel.getColumn(10).setPreferredWidth(270);
-            columnModel.getColumn(11).setPreferredWidth(80);
-        
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(150);
+        columnModel.getColumn(3).setPreferredWidth(150);
+        columnModel.getColumn(4).setPreferredWidth(50);
+        columnModel.getColumn(5).setPreferredWidth(50);
+        columnModel.getColumn(6).setPreferredWidth(80);
+        columnModel.getColumn(7).setPreferredWidth(130);
+        columnModel.getColumn(8).setPreferredWidth(130);
+        columnModel.getColumn(9).setPreferredWidth(130);
+        columnModel.getColumn(10).setPreferredWidth(270);
+        columnModel.getColumn(11).setPreferredWidth(80);
+
     }//GEN-LAST:event_jTable1ComponentResized
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+        // TODO add your handling code here:
+
+        char c = evt.getKeyChar();
+
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIDKeyTyped
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
-        new C_Dashboard().setVisible(true);
+        new Main_Dashboard().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_homeLabelMouseClicked
 
     private void documentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_documentLabelMouseClicked
-        new H_Documents().setVisible(true);
+        new Main_IDGenerator().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_documentLabelMouseClicked
 
     private void reportLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportLabelMouseClicked
-        new G_Reports().setVisible(true);
+        new Main_Reports().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_reportLabelMouseClicked
 
     private void officialLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_officialLabelMouseClicked
-        new F_Officials().setVisible(true);
+        new Officials_DataManager().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_officialLabelMouseClicked
 
@@ -610,21 +600,20 @@ public class J_Database extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(J_Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_DataManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(J_Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_DataManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(J_Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_DataManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(J_Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_DataManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new J_Database().setVisible(true);
+                new Resident_DataManager().setVisible(true);
             }
         });
     }

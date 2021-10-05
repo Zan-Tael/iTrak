@@ -28,7 +28,7 @@ import javax.swing.JFileChooser;
 
 
 
-public class InsertForm_Resident extends javax.swing.JFrame {
+public class Resident_Insert extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrameForm
@@ -41,7 +41,7 @@ public class InsertForm_Resident extends javax.swing.JFrame {
     static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
-    public InsertForm_Resident() {
+    public Resident_Insert() {
         initComponents();
     }
 
@@ -122,29 +122,27 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         weight = new javax.swing.JTextField();
         insert = new javax.swing.JButton();
         SideBar = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         homeLabel = new javax.swing.JLabel();
         databasePage = new javax.swing.JPanel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         documentPage = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         documentLabel = new javax.swing.JLabel();
         reportsPage = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         reportLabel = new javax.swing.JLabel();
         officialsPage = new javax.swing.JPanel();
-        jLabel42 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         officialLabel = new javax.swing.JLabel();
         aboutUs = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         aboutUsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(1300, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -387,16 +385,16 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("Menu");
-        SideBar.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Menu");
+        SideBar.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         homePage.setBackground(new java.awt.Color(51, 51, 51));
         homePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        homePage.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        homePage.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         homeLabel.setBackground(new java.awt.Color(204, 204, 204));
         homeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -414,22 +412,22 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         databasePage.setBackground(new java.awt.Color(102, 102, 102));
         databasePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        databasePage.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        databasePage.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        jLabel39.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setText("Database");
-        databasePage.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        jLabel31.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("Database");
+        databasePage.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
         SideBar.add(databasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
 
         documentPage.setBackground(new java.awt.Color(51, 51, 51));
         documentPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        documentPage.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        documentPage.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         documentLabel.setBackground(new java.awt.Color(204, 204, 204));
         documentLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -447,8 +445,8 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         reportsPage.setBackground(new java.awt.Color(51, 51, 51));
         reportsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        reportsPage.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        reportsPage.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         reportLabel.setBackground(new java.awt.Color(204, 204, 204));
         reportLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -466,8 +464,8 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         officialsPage.setBackground(new java.awt.Color(51, 51, 51));
         officialsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        officialsPage.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        officialsPage.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         officialLabel.setBackground(new java.awt.Color(204, 204, 204));
         officialLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -485,8 +483,8 @@ public class InsertForm_Resident extends javax.swing.JFrame {
         aboutUs.setBackground(new java.awt.Color(51, 51, 51));
         aboutUs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        aboutUs.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        aboutUs.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         aboutUsLabel.setBackground(new java.awt.Color(204, 204, 204));
         aboutUsLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -631,34 +629,34 @@ public class InsertForm_Resident extends javax.swing.JFrame {
      imageSignature.setIcon(icon);
     }//GEN-LAST:event_uploadSignatureActionPerformed
 
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        new Resident_DataManager().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonMouseClicked
+
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
-        new C_Dashboard().setVisible(true);
+        new Main_Dashboard().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_homeLabelMouseClicked
 
     private void documentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_documentLabelMouseClicked
-        new H_Documents().setVisible(true);
+        new Main_IDGenerator().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_documentLabelMouseClicked
 
     private void reportLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportLabelMouseClicked
-        new G_Reports().setVisible(true);
+        new Main_Reports().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_reportLabelMouseClicked
 
     private void officialLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_officialLabelMouseClicked
-        new F_Officials().setVisible(true);
+        new Officials_DataManager().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_officialLabelMouseClicked
 
     private void aboutUsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsLabelMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_aboutUsLabelMouseClicked
-
-    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        new J_Database().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_backButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -671,27 +669,29 @@ public class InsertForm_Resident extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InsertForm_Resident().setVisible(true);
+                new Resident_Insert().setVisible(true);
             }
         });
     }
@@ -739,16 +739,16 @@ public class InsertForm_Resident extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

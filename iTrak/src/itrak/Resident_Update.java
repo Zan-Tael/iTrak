@@ -30,7 +30,7 @@ import javax.swing.JFileChooser;
 
 
 
-public class UpdateForm_Resident extends javax.swing.JFrame {
+public class Resident_Update extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrameForm
@@ -44,7 +44,7 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
-    public UpdateForm_Resident() {
+    public Resident_Update() {
         initComponents();
     }
 
@@ -124,30 +124,28 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         weight = new javax.swing.JTextField();
         insert = new javax.swing.JButton();
-        SideBar = new javax.swing.JPanel();
-        homePage = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
-        homeLabel = new javax.swing.JLabel();
-        databasePage = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
+        SideBar2 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        documentPage = new javax.swing.JPanel();
+        homePage2 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
+        homeLabel2 = new javax.swing.JLabel();
+        databasePage = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        documentPage = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         documentLabel = new javax.swing.JLabel();
         reportsPage = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         reportLabel = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         officialsPage = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         officialLabel = new javax.swing.JLabel();
         aboutUs = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
         aboutUsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(1300, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -387,47 +385,52 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
 
         jPanel3.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 570, 590));
 
-        SideBar.setBackground(new java.awt.Color(51, 51, 51));
-        SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        SideBar2.setBackground(new java.awt.Color(51, 51, 51));
+        SideBar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        homePage.setBackground(new java.awt.Color(51, 51, 51));
-        homePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Menu");
+        SideBar2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        homePage.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        homePage2.setBackground(new java.awt.Color(51, 51, 51));
+        homePage2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        homeLabel.setBackground(new java.awt.Color(204, 204, 204));
-        homeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        homeLabel.setForeground(new java.awt.Color(153, 153, 153));
-        homeLabel.setText("Home");
-        homeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        homePage2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        homeLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        homeLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        homeLabel2.setText("Home");
+        homeLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeLabelMouseClicked(evt);
+                homeLabel2MouseClicked(evt);
             }
         });
-        homePage.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        homePage2.add(homeLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(homePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
+        SideBar2.add(homePage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
 
         databasePage.setBackground(new java.awt.Color(102, 102, 102));
         databasePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        databasePage.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        databasePage.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        jLabel30.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("Database");
-        databasePage.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        jLabel33.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Database");
+        databasePage.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(databasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
+        SideBar2.add(databasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
 
         documentPage.setBackground(new java.awt.Color(51, 51, 51));
         documentPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        documentPage.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        documentPage.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         documentLabel.setBackground(new java.awt.Color(204, 204, 204));
         documentLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -440,13 +443,13 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         });
         documentPage.add(documentLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(documentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
+        SideBar2.add(documentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
 
         reportsPage.setBackground(new java.awt.Color(51, 51, 51));
         reportsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        reportsPage.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        reportsPage.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         reportLabel.setBackground(new java.awt.Color(204, 204, 204));
         reportLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -459,18 +462,13 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         });
         reportsPage.add(reportLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(reportsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("Menu");
-        SideBar.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        SideBar2.add(reportsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
 
         officialsPage.setBackground(new java.awt.Color(51, 51, 51));
         officialsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        officialsPage.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        officialsPage.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         officialLabel.setBackground(new java.awt.Color(204, 204, 204));
         officialLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -483,13 +481,13 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         });
         officialsPage.add(officialLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(officialsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
+        SideBar2.add(officialsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
 
         aboutUs.setBackground(new java.awt.Color(51, 51, 51));
         aboutUs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        aboutUs.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        aboutUs.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         aboutUsLabel.setBackground(new java.awt.Color(204, 204, 204));
         aboutUsLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -502,9 +500,9 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         });
         aboutUs.add(aboutUsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        SideBar.add(aboutUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 210, 50));
+        SideBar2.add(aboutUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 210, 50));
 
-        jPanel3.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
+        jPanel3.add(SideBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 700));
 
@@ -634,34 +632,34 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_insertActionPerformed
 
-    private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
-        new C_Dashboard().setVisible(true);
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        new Resident_DataManager().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_homeLabelMouseClicked
+    }//GEN-LAST:event_backButtonMouseClicked
+
+    private void homeLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabel2MouseClicked
+        new Main_Dashboard().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_homeLabel2MouseClicked
 
     private void documentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_documentLabelMouseClicked
-        new H_Documents().setVisible(true);
+        new Main_IDGenerator().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_documentLabelMouseClicked
 
     private void reportLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportLabelMouseClicked
-        new G_Reports().setVisible(true);
+        new Main_Reports().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_reportLabelMouseClicked
 
     private void officialLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_officialLabelMouseClicked
-        new F_Officials().setVisible(true);
+        new Officials_DataManager().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_officialLabelMouseClicked
 
     private void aboutUsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsLabelMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_aboutUsLabelMouseClicked
-
-    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        new J_Database().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_backButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -680,13 +678,13 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InsertForm_Resident.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Resident_Insert.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -694,7 +692,7 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InsertForm_Resident().setVisible(true);
+                new Resident_Insert().setVisible(true);
             }
         });
     }
@@ -703,6 +701,8 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
     private javax.swing.JPanel Form;
     private javax.swing.JPanel Photo;
     private javax.swing.JPanel SideBar;
+    private javax.swing.JPanel SideBar1;
+    private javax.swing.JPanel SideBar2;
     private javax.swing.JPanel aboutUs;
     private javax.swing.JLabel aboutUsLabel;
     private javax.swing.JLabel backButton;
@@ -718,7 +718,11 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
     private javax.swing.JTextField gender;
     private javax.swing.JTextField height;
     private javax.swing.JLabel homeLabel;
+    private javax.swing.JLabel homeLabel1;
+    private javax.swing.JLabel homeLabel2;
     private javax.swing.JPanel homePage;
+    private javax.swing.JPanel homePage1;
+    private javax.swing.JPanel homePage2;
     private javax.swing.JLabel imageSignature;
     private javax.swing.JLabel img1x1;
     private javax.swing.JButton insert;
@@ -751,6 +755,10 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

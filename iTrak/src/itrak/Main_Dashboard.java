@@ -5,6 +5,8 @@
  */
 package itrak;
 
+import java.awt.Color;
+
 /**
  *
  * @author ZAEL
@@ -64,6 +66,17 @@ public class Main_Dashboard extends javax.swing.JFrame {
         SideBar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         homePage.setBackground(new java.awt.Color(51, 51, 51));
+        homePage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homePageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                homePageMouseEntered(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                homePageMouseReleased(evt);
+            }
+        });
         homePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
@@ -71,18 +84,21 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         homeLabel.setBackground(new java.awt.Color(204, 204, 204));
         homeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        homeLabel.setForeground(new java.awt.Color(153, 153, 153));
+        homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setText("Home");
         homeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                homeLabelMouseExited(evt);
             }
         });
         homePage.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
         SideBar.add(homePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
 
-        databasePage.setBackground(new java.awt.Color(102, 102, 102));
+        databasePage.setBackground(new java.awt.Color(51, 51, 51));
         databasePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
@@ -104,7 +120,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         documentLabel.setBackground(new java.awt.Color(204, 204, 204));
         documentLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        documentLabel.setForeground(new java.awt.Color(153, 153, 153));
+        documentLabel.setForeground(new java.awt.Color(255, 255, 255));
         documentLabel.setText("Documents");
         documentLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -123,7 +139,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         reportLabel.setBackground(new java.awt.Color(204, 204, 204));
         reportLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        reportLabel.setForeground(new java.awt.Color(153, 153, 153));
+        reportLabel.setForeground(new java.awt.Color(255, 255, 255));
         reportLabel.setText("Reports");
         reportLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -142,7 +158,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         officialLabel.setBackground(new java.awt.Color(204, 204, 204));
         officialLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        officialLabel.setForeground(new java.awt.Color(153, 153, 153));
+        officialLabel.setForeground(new java.awt.Color(255, 255, 255));
         officialLabel.setText("Officials");
         officialLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,7 +177,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         aboutUsLabel.setBackground(new java.awt.Color(204, 204, 204));
         aboutUsLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        aboutUsLabel.setForeground(new java.awt.Color(153, 153, 153));
+        aboutUsLabel.setForeground(new java.awt.Color(255, 255, 255));
         aboutUsLabel.setText("About Us");
         aboutUsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -214,6 +230,26 @@ public class Main_Dashboard extends javax.swing.JFrame {
     private void aboutUsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsLabelMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_aboutUsLabelMouseClicked
+
+    private void homePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseClicked
+        // TODO add your handling code here:
+        homePage.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_homePageMouseClicked
+
+    private void homePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseEntered
+        // TODO add your handling code here:
+         homePage.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_homePageMouseEntered
+
+    private void homeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseExited
+        // TODO add your handling code here:
+         homePage.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_homeLabelMouseExited
+
+    private void homePageMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseReleased
+        // TODO add your handling code here:
+          homePage.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_homePageMouseReleased
 
     /**
      * @param args the command line arguments

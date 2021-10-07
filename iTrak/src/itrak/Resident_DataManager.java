@@ -15,6 +15,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import java.awt.Color;
 
 public class Resident_DataManager extends javax.swing.JFrame {
 
@@ -115,24 +116,27 @@ public class Resident_DataManager extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        homePage = new javax.swing.JPanel();
+        home = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        homeLabel = new javax.swing.JLabel();
-        databasePage = new javax.swing.JPanel();
+        HomePage = new javax.swing.JLabel();
+        database = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        documentPage = new javax.swing.JPanel();
+        DatabasePage = new javax.swing.JLabel();
+        documents = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        documentLabel = new javax.swing.JLabel();
-        reportsPage = new javax.swing.JPanel();
+        DocumentPage = new javax.swing.JLabel();
+        reports = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        reportLabel = new javax.swing.JLabel();
-        officialsPage = new javax.swing.JPanel();
+        ReportPage = new javax.swing.JLabel();
+        officials = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        officialLabel = new javax.swing.JLabel();
-        aboutUs = new javax.swing.JPanel();
+        OfficialPage = new javax.swing.JLabel();
+        aboutus = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        aboutUsLabel = new javax.swing.JLabel();
+        AboutPage = new javax.swing.JLabel();
+        logout = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        LogoutPage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,7 +249,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         main.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 27, -1));
 
         lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIcon.setOpaque(true);
+        lblIcon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         main.add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 70, 180, 180));
 
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -285,114 +289,180 @@ public class Resident_DataManager extends javax.swing.JFrame {
         jLabel5.setText("Menu");
         SideBar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        homePage.setBackground(new java.awt.Color(51, 51, 51));
-        homePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        home.setBackground(new java.awt.Color(51, 51, 51));
+        home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        homePage.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        home.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        homeLabel.setBackground(new java.awt.Color(204, 204, 204));
-        homeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        homeLabel.setForeground(new java.awt.Color(153, 153, 153));
-        homeLabel.setText("Home");
-        homeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        HomePage.setBackground(new java.awt.Color(204, 204, 204));
+        HomePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HomePage.setForeground(new java.awt.Color(255, 255, 255));
+        HomePage.setText("Home");
+        HomePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeLabelMouseClicked(evt);
+                HomePageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HomePageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HomePageMouseExited(evt);
             }
         });
-        homePage.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(homePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
+        SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
 
-        databasePage.setBackground(new java.awt.Color(102, 102, 102));
-        databasePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        database.setBackground(new java.awt.Color(51, 51, 51));
+        database.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        databasePage.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        database.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        jLabel14.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Database");
-        databasePage.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        DatabasePage.setBackground(new java.awt.Color(204, 204, 204));
+        DatabasePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DatabasePage.setForeground(new java.awt.Color(255, 255, 255));
+        DatabasePage.setText("Database");
+        DatabasePage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DatabasePageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DatabasePageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DatabasePageMouseExited(evt);
+            }
+        });
+        database.add(DatabasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(databasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
+        SideBar.add(database, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
 
-        documentPage.setBackground(new java.awt.Color(51, 51, 51));
-        documentPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        documents.setBackground(new java.awt.Color(51, 51, 51));
+        documents.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        documentPage.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        documents.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        documentLabel.setBackground(new java.awt.Color(204, 204, 204));
-        documentLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        documentLabel.setForeground(new java.awt.Color(153, 153, 153));
-        documentLabel.setText("Documents");
-        documentLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        DocumentPage.setBackground(new java.awt.Color(204, 204, 204));
+        DocumentPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DocumentPage.setForeground(new java.awt.Color(255, 255, 255));
+        DocumentPage.setText("Documents");
+        DocumentPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                documentLabelMouseClicked(evt);
+                DocumentPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DocumentPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DocumentPageMouseExited(evt);
             }
         });
-        documentPage.add(documentLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        documents.add(DocumentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(documentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
+        SideBar.add(documents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
 
-        reportsPage.setBackground(new java.awt.Color(51, 51, 51));
-        reportsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        reports.setBackground(new java.awt.Color(51, 51, 51));
+        reports.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        reportsPage.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        reports.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        reportLabel.setBackground(new java.awt.Color(204, 204, 204));
-        reportLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        reportLabel.setForeground(new java.awt.Color(153, 153, 153));
-        reportLabel.setText("Reports");
-        reportLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        ReportPage.setBackground(new java.awt.Color(204, 204, 204));
+        ReportPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ReportPage.setForeground(new java.awt.Color(255, 255, 255));
+        ReportPage.setText("Reports");
+        ReportPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                reportLabelMouseClicked(evt);
+                ReportPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ReportPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ReportPageMouseExited(evt);
             }
         });
-        reportsPage.add(reportLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        reports.add(ReportPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(reportsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
+        SideBar.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
 
-        officialsPage.setBackground(new java.awt.Color(51, 51, 51));
-        officialsPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        officials.setBackground(new java.awt.Color(51, 51, 51));
+        officials.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        officialsPage.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        officials.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        officialLabel.setBackground(new java.awt.Color(204, 204, 204));
-        officialLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        officialLabel.setForeground(new java.awt.Color(153, 153, 153));
-        officialLabel.setText("Officials");
-        officialLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        OfficialPage.setBackground(new java.awt.Color(204, 204, 204));
+        OfficialPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        OfficialPage.setForeground(new java.awt.Color(255, 255, 255));
+        OfficialPage.setText("Officials");
+        OfficialPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                officialLabelMouseClicked(evt);
+                OfficialPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                OfficialPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                OfficialPageMouseExited(evt);
             }
         });
-        officialsPage.add(officialLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        officials.add(OfficialPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(officialsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
+        SideBar.add(officials, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
 
-        aboutUs.setBackground(new java.awt.Color(51, 51, 51));
-        aboutUs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        aboutus.setBackground(new java.awt.Color(51, 51, 51));
+        aboutus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        aboutUs.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        aboutus.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        aboutUsLabel.setBackground(new java.awt.Color(204, 204, 204));
-        aboutUsLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        aboutUsLabel.setForeground(new java.awt.Color(153, 153, 153));
-        aboutUsLabel.setText("About Us");
-        aboutUsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        AboutPage.setBackground(new java.awt.Color(204, 204, 204));
+        AboutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        AboutPage.setForeground(new java.awt.Color(255, 255, 255));
+        AboutPage.setText("About Us");
+        AboutPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aboutUsLabelMouseClicked(evt);
+                AboutPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AboutPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AboutPageMouseExited(evt);
             }
         });
-        aboutUs.add(aboutUsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
+        aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        SideBar.add(aboutUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 210, 50));
+        SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 210, 50));
+
+        logout.setBackground(new java.awt.Color(51, 51, 51));
+        logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        logout.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        LogoutPage.setBackground(new java.awt.Color(204, 204, 204));
+        LogoutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LogoutPage.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutPage.setText("Log Out");
+        LogoutPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogoutPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LogoutPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LogoutPageMouseExited(evt);
+            }
+        });
+        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+
+        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 50));
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
 
@@ -559,29 +629,93 @@ public class Resident_DataManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
-    private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
-        new Main_Dashboard().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_homeLabelMouseClicked
+    private void AboutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutPageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutPageMouseClicked
 
-    private void documentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_documentLabelMouseClicked
-        new Main_IDGenerator().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_documentLabelMouseClicked
-
-    private void reportLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportLabelMouseClicked
-        new Main_Reports().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_reportLabelMouseClicked
-
-    private void officialLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_officialLabelMouseClicked
+    private void OfficialPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseClicked
         new Officials_DataManager().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_officialLabelMouseClicked
+    }//GEN-LAST:event_OfficialPageMouseClicked
 
-    private void aboutUsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsLabelMouseClicked
+    private void ReportPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseClicked
+        new Main_Reports().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ReportPageMouseClicked
+
+    private void DocumentPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DocumentPageMouseClicked
+        new Main_IDGenerator().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_DocumentPageMouseClicked
+
+    private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
+        new Main_Dashboard().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_HomePageMouseClicked
+
+    private void HomePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseEntered
+        home.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_HomePageMouseEntered
+
+    private void HomePageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseExited
+        home.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_HomePageMouseExited
+
+    private void DatabasePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseEntered
+        database.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_DatabasePageMouseEntered
+
+    private void DatabasePageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseExited
+        database.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_DatabasePageMouseExited
+
+    private void DatabasePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_aboutUsLabelMouseClicked
+    }//GEN-LAST:event_DatabasePageMouseClicked
+
+    private void DocumentPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DocumentPageMouseEntered
+        documents.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_DocumentPageMouseEntered
+
+    private void DocumentPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DocumentPageMouseExited
+        documents.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_DocumentPageMouseExited
+
+    private void ReportPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseEntered
+        reports.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_ReportPageMouseEntered
+
+    private void ReportPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseExited
+        reports.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_ReportPageMouseExited
+
+    private void OfficialPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseEntered
+        officials.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_OfficialPageMouseEntered
+
+    private void OfficialPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseExited
+        officials.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_OfficialPageMouseExited
+
+    private void AboutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutPageMouseEntered
+        aboutus.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_AboutPageMouseEntered
+
+    private void AboutPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutPageMouseExited
+        aboutus.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_AboutPageMouseExited
+
+    private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LogoutPageMouseClicked
+
+    private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered
+        logout.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_LogoutPageMouseEntered
+
+    private void LogoutPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseExited
+        logout.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_LogoutPageMouseExited
 
     /**
      * @param args the command line arguments
@@ -619,20 +753,24 @@ public class Resident_DataManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AboutPage;
+    private javax.swing.JLabel DatabasePage;
+    private javax.swing.JLabel DocumentPage;
+    private javax.swing.JLabel HomePage;
+    private javax.swing.JLabel LogoutPage;
+    private javax.swing.JLabel OfficialPage;
+    private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
-    private javax.swing.JPanel aboutUs;
-    private javax.swing.JLabel aboutUsLabel;
+    private javax.swing.JPanel aboutus;
     private javax.swing.JTextField addressField;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JPanel databasePage;
-    private javax.swing.JLabel documentLabel;
-    private javax.swing.JPanel documentPage;
-    private javax.swing.JLabel homeLabel;
-    private javax.swing.JPanel homePage;
+    private javax.swing.JPanel database;
+    private javax.swing.JPanel documents;
+    private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -650,13 +788,12 @@ public class Resident_DataManager extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblIcon;
+    private javax.swing.JPanel logout;
     private javax.swing.JPanel main;
     private javax.swing.JTextField mobileField;
     private javax.swing.JTextField nameField;
-    private javax.swing.JLabel officialLabel;
-    private javax.swing.JPanel officialsPage;
-    private javax.swing.JLabel reportLabel;
-    private javax.swing.JPanel reportsPage;
+    private javax.swing.JPanel officials;
+    private javax.swing.JPanel reports;
     private javax.swing.JTextField tellyField;
     private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables

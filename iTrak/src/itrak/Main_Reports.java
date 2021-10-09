@@ -29,54 +29,50 @@ public class Main_Reports extends javax.swing.JFrame {
     private void initComponents() {
 
         main = new javax.swing.JPanel();
-        SideBar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        home = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        HomePage = new javax.swing.JLabel();
-        database = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        DatabasePage = new javax.swing.JLabel();
-        documents = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        DocumentPage = new javax.swing.JLabel();
-        reports = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        ReportsPage = new javax.swing.JLabel();
-        officials = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        OfficialsPage = new javax.swing.JLabel();
-        aboutus = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        AboutPage = new javax.swing.JLabel();
-        logout = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        LogoutPage = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        SideBar = new javax.swing.JPanel();
+        home = new javax.swing.JPanel();
+        HomePage = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        database = new javax.swing.JPanel();
+        DatabasePage = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        documents = new javax.swing.JPanel();
+        DocumentPage = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        reports = new javax.swing.JPanel();
+        ReportPage = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        officials = new javax.swing.JPanel();
+        OfficialPage = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        aboutus = new javax.swing.JPanel();
+        AboutPage = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        logout = new javax.swing.JPanel();
+        LogoutPage = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
+        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1220, 50));
+
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Menu");
-        SideBar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         home.setBackground(new java.awt.Color(51, 51, 51));
         home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        home.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        HomePage.setBackground(new java.awt.Color(51, 51, 51));
-        HomePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HomePage.setBackground(new java.awt.Color(204, 204, 204));
+        HomePage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         HomePage.setForeground(new java.awt.Color(255, 255, 255));
+        HomePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HomePage.setText("Home");
+        HomePage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         HomePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomePageMouseClicked(evt);
@@ -88,20 +84,23 @@ public class Main_Reports extends javax.swing.JFrame {
                 HomePageMouseExited(evt);
             }
         });
-        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_home.png"))); // NOI18N
+        home.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 60));
 
         database.setBackground(new java.awt.Color(51, 51, 51));
         database.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        database.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         DatabasePage.setBackground(new java.awt.Color(204, 204, 204));
-        DatabasePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DatabasePage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DatabasePage.setForeground(new java.awt.Color(255, 255, 255));
+        DatabasePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DatabasePage.setText("Database");
+        DatabasePage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         DatabasePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DatabasePageMouseClicked(evt);
@@ -113,20 +112,25 @@ public class Main_Reports extends javax.swing.JFrame {
                 DatabasePageMouseExited(evt);
             }
         });
-        database.add(DatabasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        database.add(DatabasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(database, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_folder.png"))); // NOI18N
+        database.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(database, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 80, 60));
 
         documents.setBackground(new java.awt.Color(51, 51, 51));
         documents.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        documents.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         DocumentPage.setBackground(new java.awt.Color(204, 204, 204));
-        DocumentPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DocumentPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DocumentPage.setForeground(new java.awt.Color(255, 255, 255));
+        DocumentPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DocumentPage.setText("Documents");
+        DocumentPage.setToolTipText("");
+        DocumentPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         DocumentPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DocumentPageMouseClicked(evt);
@@ -138,70 +142,82 @@ public class Main_Reports extends javax.swing.JFrame {
                 DocumentPageMouseExited(evt);
             }
         });
-        documents.add(DocumentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        documents.add(DocumentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(documents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_copy.png"))); // NOI18N
+        documents.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(documents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 80, 60));
 
         reports.setBackground(new java.awt.Color(51, 51, 51));
         reports.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        reports.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        ReportsPage.setBackground(new java.awt.Color(204, 204, 204));
-        ReportsPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        ReportsPage.setForeground(new java.awt.Color(255, 255, 255));
-        ReportsPage.setText("Reports");
-        ReportsPage.addMouseListener(new java.awt.event.MouseAdapter() {
+        ReportPage.setBackground(new java.awt.Color(204, 204, 204));
+        ReportPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        ReportPage.setForeground(new java.awt.Color(255, 255, 255));
+        ReportPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ReportPage.setText("Reports");
+        ReportPage.setToolTipText("");
+        ReportPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        ReportPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReportsPageMouseClicked(evt);
+                ReportPageMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ReportsPageMouseEntered(evt);
+                ReportPageMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ReportsPageMouseExited(evt);
+                ReportPageMouseExited(evt);
             }
         });
-        reports.add(ReportsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        reports.add(ReportPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_chart.png"))); // NOI18N
+        reports.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 60));
 
         officials.setBackground(new java.awt.Color(51, 51, 51));
         officials.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        officials.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        OfficialsPage.setBackground(new java.awt.Color(204, 204, 204));
-        OfficialsPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        OfficialsPage.setForeground(new java.awt.Color(255, 255, 255));
-        OfficialsPage.setText("Officials");
-        OfficialsPage.addMouseListener(new java.awt.event.MouseAdapter() {
+        OfficialPage.setBackground(new java.awt.Color(204, 204, 204));
+        OfficialPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        OfficialPage.setForeground(new java.awt.Color(255, 255, 255));
+        OfficialPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        OfficialPage.setText("Officials");
+        OfficialPage.setToolTipText("");
+        OfficialPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        OfficialPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OfficialsPageMouseClicked(evt);
+                OfficialPageMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                OfficialsPageMouseEntered(evt);
+                OfficialPageMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                OfficialsPageMouseExited(evt);
+                OfficialPageMouseExited(evt);
             }
         });
-        officials.add(OfficialsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        officials.add(OfficialPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(officials, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
+        officials.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(officials, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 80, 60));
 
         aboutus.setBackground(new java.awt.Color(51, 51, 51));
         aboutus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        aboutus.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         AboutPage.setBackground(new java.awt.Color(204, 204, 204));
-        AboutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        AboutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AboutPage.setForeground(new java.awt.Color(255, 255, 255));
+        AboutPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AboutPage.setText("About Us");
+        AboutPage.setToolTipText("");
+        AboutPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         AboutPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AboutPageMouseClicked(evt);
@@ -213,20 +229,24 @@ public class Main_Reports extends javax.swing.JFrame {
                 AboutPageMouseExited(evt);
             }
         });
-        aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 210, 50));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
+        aboutus.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 80, 60));
 
         logout.setBackground(new java.awt.Color(51, 51, 51));
         logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        logout.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         LogoutPage.setBackground(new java.awt.Color(204, 204, 204));
-        LogoutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LogoutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         LogoutPage.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LogoutPage.setText("Log Out");
+        LogoutPage.setToolTipText("");
+        LogoutPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         LogoutPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutPageMouseClicked(evt);
@@ -238,14 +258,15 @@ public class Main_Reports extends javax.swing.JFrame {
                 LogoutPageMouseExited(evt);
             }
         });
-        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 50));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_logout.png"))); // NOI18N
+        logout.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
 
-        main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
+        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 80, 60));
 
-        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
+        main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,6 +297,8 @@ public class Main_Reports extends javax.swing.JFrame {
 
     private void DatabasePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseClicked
         // TODO add your handling code here:
+        new Resident_DataManager().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DatabasePageMouseClicked
 
     private void DatabasePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseEntered
@@ -287,7 +310,8 @@ public class Main_Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_DatabasePageMouseExited
 
     private void DocumentPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DocumentPageMouseClicked
-        // TODO add your handling code here:
+        new Main_IDGenerator().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DocumentPageMouseClicked
 
     private void DocumentPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DocumentPageMouseEntered
@@ -298,29 +322,31 @@ public class Main_Reports extends javax.swing.JFrame {
         documents.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_DocumentPageMouseExited
 
-    private void ReportsPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsPageMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ReportsPageMouseClicked
+    private void ReportPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseClicked
+        new Main_Reports().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ReportPageMouseClicked
 
-    private void ReportsPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsPageMouseEntered
+    private void ReportPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseEntered
         reports.setBackground(new Color(61,178,255));
-    }//GEN-LAST:event_ReportsPageMouseEntered
+    }//GEN-LAST:event_ReportPageMouseEntered
 
-    private void ReportsPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsPageMouseExited
+    private void ReportPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPageMouseExited
         reports.setBackground(new Color(51,51,51));
-    }//GEN-LAST:event_ReportsPageMouseExited
+    }//GEN-LAST:event_ReportPageMouseExited
 
-    private void OfficialsPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialsPageMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OfficialsPageMouseClicked
+    private void OfficialPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseClicked
+        new Officials_DataManager().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_OfficialPageMouseClicked
 
-    private void OfficialsPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialsPageMouseEntered
+    private void OfficialPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseEntered
         officials.setBackground(new Color(61,178,255));
-    }//GEN-LAST:event_OfficialsPageMouseEntered
+    }//GEN-LAST:event_OfficialPageMouseEntered
 
-    private void OfficialsPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialsPageMouseExited
+    private void OfficialPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfficialPageMouseExited
         officials.setBackground(new Color(51,51,51));
-    }//GEN-LAST:event_OfficialsPageMouseExited
+    }//GEN-LAST:event_OfficialPageMouseExited
 
     private void AboutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutPageMouseClicked
         // TODO add your handling code here:
@@ -387,8 +413,8 @@ public class Main_Reports extends javax.swing.JFrame {
     private javax.swing.JLabel DocumentPage;
     private javax.swing.JLabel HomePage;
     private javax.swing.JLabel LogoutPage;
-    private javax.swing.JLabel OfficialsPage;
-    private javax.swing.JLabel ReportsPage;
+    private javax.swing.JLabel OfficialPage;
+    private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
     private javax.swing.JPanel database;
@@ -398,9 +424,8 @@ public class Main_Reports extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel logout;

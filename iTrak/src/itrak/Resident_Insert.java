@@ -56,8 +56,6 @@ public class Resident_Insert extends javax.swing.JFrame {
 
         jProgressBar1 = new javax.swing.JProgressBar();
         jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        backButton = new javax.swing.JLabel();
         Photo = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         uploadPicture = new javax.swing.JButton();
@@ -121,50 +119,37 @@ public class Resident_Insert extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         weight = new javax.swing.JTextField();
         insert = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         home = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
         HomePage = new javax.swing.JLabel();
-        database = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        DatabasePage = new javax.swing.JLabel();
-        documents = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        DocumentPage = new javax.swing.JLabel();
-        reports = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        ReportPage = new javax.swing.JLabel();
-        officials = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        OfficialPage = new javax.swing.JLabel();
-        aboutus = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
-        AboutPage = new javax.swing.JLabel();
-        logout = new javax.swing.JPanel();
+        database = new javax.swing.JPanel();
+        DatabasePage = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        documents = new javax.swing.JPanel();
+        DocumentPage = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        reports = new javax.swing.JPanel();
+        ReportPage = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        officials = new javax.swing.JPanel();
+        OfficialPage = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        aboutus = new javax.swing.JPanel();
+        AboutPage = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setPreferredSize(new java.awt.Dimension(1000, 720));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(61, 178, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        backButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setText("Back");
-        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backButtonMouseClicked(evt);
-            }
-        });
-        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 50));
-
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
         Photo.setBackground(new java.awt.Color(255, 255, 255));
         Photo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -193,7 +178,6 @@ public class Resident_Insert extends javax.swing.JFrame {
         Photo.add(fileName1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 166, -1));
 
         img1x1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        img1x1.setText("PIRMA HERE");
         img1x1.setToolTipText("");
         img1x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Photo.add(img1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 166, 166));
@@ -218,7 +202,6 @@ public class Resident_Insert extends javax.swing.JFrame {
         Photo.add(uploadSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 166, -1));
 
         imageSignature.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageSignature.setText("PIRMA HERE");
         imageSignature.setToolTipText("");
         imageSignature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Photo.add(imageSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 166, 166));
@@ -229,7 +212,7 @@ public class Resident_Insert extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         Photo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 166, 10));
 
-        jPanel3.add(Photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 210, 590));
+        jPanel3.add(Photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 210, 590));
 
         Form.setBackground(new java.awt.Color(255, 255, 255));
         Form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -383,26 +366,23 @@ public class Resident_Insert extends javax.swing.JFrame {
         });
         Form.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 530, -1));
 
-        jPanel3.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 570, 590));
+        jPanel3.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
+
+        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1220, 50));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("Menu");
-        SideBar.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
         home.setBackground(new java.awt.Color(51, 51, 51));
         home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        home.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         HomePage.setBackground(new java.awt.Color(204, 204, 204));
-        HomePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HomePage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         HomePage.setForeground(new java.awt.Color(255, 255, 255));
+        HomePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HomePage.setText("Home");
+        HomePage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         HomePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomePageMouseClicked(evt);
@@ -414,20 +394,23 @@ public class Resident_Insert extends javax.swing.JFrame {
                 HomePageMouseExited(evt);
             }
         });
-        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 50));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_home.png"))); // NOI18N
+        home.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 60));
 
         database.setBackground(new java.awt.Color(51, 51, 51));
         database.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        database.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         DatabasePage.setBackground(new java.awt.Color(204, 204, 204));
-        DatabasePage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DatabasePage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DatabasePage.setForeground(new java.awt.Color(255, 255, 255));
+        DatabasePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DatabasePage.setText("Database");
+        DatabasePage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         DatabasePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DatabasePageMouseClicked(evt);
@@ -439,20 +422,25 @@ public class Resident_Insert extends javax.swing.JFrame {
                 DatabasePageMouseExited(evt);
             }
         });
-        database.add(DatabasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        database.add(DatabasePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(database, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_folder.png"))); // NOI18N
+        database.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(database, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 80, 60));
 
         documents.setBackground(new java.awt.Color(51, 51, 51));
         documents.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        documents.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         DocumentPage.setBackground(new java.awt.Color(204, 204, 204));
-        DocumentPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DocumentPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DocumentPage.setForeground(new java.awt.Color(255, 255, 255));
+        DocumentPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DocumentPage.setText("Documents");
+        DocumentPage.setToolTipText("");
+        DocumentPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         DocumentPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DocumentPageMouseClicked(evt);
@@ -464,20 +452,24 @@ public class Resident_Insert extends javax.swing.JFrame {
                 DocumentPageMouseExited(evt);
             }
         });
-        documents.add(DocumentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        documents.add(DocumentPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(documents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 210, 50));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_copy.png"))); // NOI18N
+        documents.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(documents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 80, 60));
 
         reports.setBackground(new java.awt.Color(51, 51, 51));
         reports.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        reports.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         ReportPage.setBackground(new java.awt.Color(204, 204, 204));
-        ReportPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ReportPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ReportPage.setForeground(new java.awt.Color(255, 255, 255));
+        ReportPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ReportPage.setText("Reports");
+        ReportPage.setToolTipText("");
+        ReportPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         ReportPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ReportPageMouseClicked(evt);
@@ -489,20 +481,24 @@ public class Resident_Insert extends javax.swing.JFrame {
                 ReportPageMouseExited(evt);
             }
         });
-        reports.add(ReportPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        reports.add(ReportPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 50));
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_chart.png"))); // NOI18N
+        reports.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 60));
 
         officials.setBackground(new java.awt.Color(51, 51, 51));
         officials.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        officials.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         OfficialPage.setBackground(new java.awt.Color(204, 204, 204));
-        OfficialPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        OfficialPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         OfficialPage.setForeground(new java.awt.Color(255, 255, 255));
+        OfficialPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         OfficialPage.setText("Officials");
+        OfficialPage.setToolTipText("");
+        OfficialPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         OfficialPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OfficialPageMouseClicked(evt);
@@ -514,20 +510,24 @@ public class Resident_Insert extends javax.swing.JFrame {
                 OfficialPageMouseExited(evt);
             }
         });
-        officials.add(OfficialPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        officials.add(OfficialPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(officials, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 50));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
+        officials.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(officials, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 80, 60));
 
         aboutus.setBackground(new java.awt.Color(51, 51, 51));
         aboutus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        aboutus.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         AboutPage.setBackground(new java.awt.Color(204, 204, 204));
-        AboutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        AboutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AboutPage.setForeground(new java.awt.Color(255, 255, 255));
+        AboutPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AboutPage.setText("About Us");
+        AboutPage.setToolTipText("");
+        AboutPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         AboutPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AboutPageMouseClicked(evt);
@@ -539,20 +539,24 @@ public class Resident_Insert extends javax.swing.JFrame {
                 AboutPageMouseExited(evt);
             }
         });
-        aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 210, 50));
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
+        aboutus.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
+        SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 80, 60));
 
         logout.setBackground(new java.awt.Color(51, 51, 51));
         logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
-        logout.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
         LogoutPage.setBackground(new java.awt.Color(204, 204, 204));
-        LogoutPage.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LogoutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         LogoutPage.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LogoutPage.setText("Log Out");
+        LogoutPage.setToolTipText("");
+        LogoutPage.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         LogoutPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutPageMouseClicked(evt);
@@ -564,13 +568,17 @@ public class Resident_Insert extends javax.swing.JFrame {
                 LogoutPageMouseExited(evt);
             }
         });
-        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
+        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
-        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 50));
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_logout.png"))); // NOI18N
+        logout.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
 
-        jPanel3.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 210, 650));
+        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 80, 60));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 700));
+        jPanel3.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 700));
 
         pack();
         setLocationRelativeTo(null);
@@ -602,8 +610,8 @@ public class Resident_Insert extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             System.out.println("Connected ka na Oracle database pre");
-            String query = "INSERT INTO MOCKDATABASEFORITRAK "
-                    + "(FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIX, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            String query = "INSERT INTO residents_db "
+                    + "(FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
                     + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2) "
                     + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             
@@ -698,11 +706,6 @@ public class Resident_Insert extends javax.swing.JFrame {
      imageSignature.setIcon(icon);
     }//GEN-LAST:event_uploadSignatureActionPerformed
 
-    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        new Resident_DataManager().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_backButtonMouseClicked
-
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
         new Main_Dashboard().setVisible(true);
         this.dispose();
@@ -718,6 +721,8 @@ public class Resident_Insert extends javax.swing.JFrame {
 
     private void DatabasePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseClicked
         // TODO add your handling code here:
+        new Resident_DataManager().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DatabasePageMouseClicked
 
     private void DatabasePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePageMouseEntered
@@ -841,7 +846,6 @@ public class Resident_Insert extends javax.swing.JFrame {
     private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
-    private javax.swing.JLabel backButton;
     private javax.swing.JComboBox<String> civilStatus;
     private javax.swing.JPanel database;
     private javax.swing.JFormattedTextField date;
@@ -876,23 +880,22 @@ public class Resident_Insert extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

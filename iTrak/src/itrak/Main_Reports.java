@@ -5,18 +5,46 @@
  */
 package itrak;
 
+import static itrak.Resident_DataManager.DB_URL;
+import static itrak.Resident_DataManager.PASS;
+import static itrak.Resident_DataManager.USER;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.jdbc.JDBCPieDataset;
 /**
  *
  * @author ZAEL
  */
 public class Main_Reports extends javax.swing.JFrame {
+    
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
 
     /**
      * Creates new form Main_Reports
      */
     public Main_Reports() {
         initComponents();
+        showPieChart();
+        showBarChart();
     }
 
     /**
@@ -29,7 +57,6 @@ public class Main_Reports extends javax.swing.JFrame {
     private void initComponents() {
 
         main = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
         HomePage = new javax.swing.JLabel();
@@ -52,14 +79,13 @@ public class Main_Reports extends javax.swing.JFrame {
         logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        pieChartPanel = new javax.swing.JPanel();
+        barChartPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1220, 50));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -268,11 +294,20 @@ public class Main_Reports extends javax.swing.JFrame {
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
 
+        pieChartPanel.setLayout(new java.awt.BorderLayout());
+        main.add(pieChartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 470, 230));
+
+        barChartPanel.setPreferredSize(new java.awt.Dimension(470, 230));
+        barChartPanel.setLayout(new java.awt.BorderLayout());
+        main.add(barChartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 470, 210));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,6 +317,73 @@ public class Main_Reports extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void showPieChart(){
+        try{
+                //create dataset
+                ;
+            
+              DefaultPieDataset pieDataset = new DefaultPieDataset( );
+              pieDataset.setValue( "iPhone5s" , new Double( 20 ) );  
+              pieDataset.setValue( "Samsung Universe" , new Double( 20 ) );   
+              pieDataset.setValue( "MotoG" , new Double( 40 ) );    
+              pieDataset.setValue( "Nokia Lumia" , new Double( 10 ) );  
+
+              //create chart
+               JFreeChart piechart = ChartFactory.createPieChart("mobile sales",pieDataset, false,true,false);//explain
+
+                PiePlot piePlot = (PiePlot) piechart.getPlot();
+
+               //changing pie chart blocks colors
+               piePlot.setSectionPaint( "iPhone 5s" , new Color(255,255,102));
+                piePlot.setSectionPaint("Samsung Universe", new Color(102,255,102));
+                piePlot.setSectionPaint("MotoG", new Color(255,102,153));
+                piePlot.setSectionPaint("Nokia Lumia", new Color(0,204,204));
+
+
+                piePlot.setBackgroundPaint(Color.white);
+
+                //create chartPanel to display chart(graph)
+                ChartPanel PieChart = new ChartPanel(piechart);
+                pieChartPanel.removeAll();
+                pieChartPanel.add(PieChart, BorderLayout.CENTER);
+                pieChartPanel.validate();
+        }
+        
+        catch(Exception e){
+        
+        }
+        
+    }
+    
+     public void showBarChart(){
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(200, "Amount", "january");
+        dataset.setValue(150, "Amount", "february");
+        dataset.setValue(18, "Amount", "march");
+        dataset.setValue(100, "Amount", "april");
+        dataset.setValue(80, "Amount", "may");
+        dataset.setValue(250, "Amount", "june");
+        
+        JFreeChart chart = ChartFactory.createBarChart("contribution","monthly","amount", 
+                dataset, PlotOrientation.VERTICAL, false,true,false);
+        
+        CategoryPlot categoryPlot = chart.getCategoryPlot();
+        //categoryPlot.setRangeGridlinePaint(Color.BLUE);
+        categoryPlot.setBackgroundPaint(Color.WHITE);
+        BarRenderer renderer = (BarRenderer) categoryPlot.getRenderer();
+        Color clr3 = new Color(204,0,51);
+        renderer.setSeriesPaint(0, clr3);
+        
+        ChartPanel barChart = new ChartPanel(chart);
+        barChartPanel.removeAll();
+        barChartPanel.add(barChart, BorderLayout.CENTER);
+        barChartPanel.validate();
+        
+        
+    }
+    
+    
+    
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
         new Main_Dashboard().setVisible(true);
         this.dispose();
@@ -403,6 +505,7 @@ public class Main_Reports extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main_Reports().setVisible(true);
+                
             }
         });
     }
@@ -417,6 +520,7 @@ public class Main_Reports extends javax.swing.JFrame {
     private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
+    private javax.swing.JPanel barChartPanel;
     private javax.swing.JPanel database;
     private javax.swing.JPanel documents;
     private javax.swing.JPanel home;
@@ -427,10 +531,10 @@ public class Main_Reports extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel main;
     private javax.swing.JPanel officials;
+    private javax.swing.JPanel pieChartPanel;
     private javax.swing.JPanel reports;
     // End of variables declaration//GEN-END:variables
 }

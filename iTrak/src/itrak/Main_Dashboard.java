@@ -13,6 +13,22 @@ public class Main_Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         main = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
         HomePage = new javax.swing.JLabel();
@@ -32,32 +48,89 @@ public class Main_Dashboard extends javax.swing.JFrame {
         aboutus = new javax.swing.JPanel();
         AboutPage = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        logout = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dashboard");
+        setBackground(new java.awt.Color(51, 51, 51));
         setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("BARANGAY LIWANAG PORTAL");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("SCHEDULE");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, 30));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("BARANGAY");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, 30));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("FORUM");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 570, -1, 30));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("VACCINATION");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4_dashboard.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, 150));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1_dashboard.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 150));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("reports and assess the community demographics."); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 30));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Barangay Liwanag Portal is a multi-functional computer application that allows Barangay\n"); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 30));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 70)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("iTrak");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("RESIDENTS");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, -1, 30));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("UPDATE");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, -1, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3_dashboard.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, -1, 150));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("officials to create, edit, delete, search for residents, create barangay documents,"); // NOI18N
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
+
+        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 770, 700));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_dashboard.png"))); // NOI18N
+        main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -235,6 +308,9 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 80, 60));
 
+        logout.setBackground(new java.awt.Color(51, 51, 51));
+        logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         LogoutPage.setBackground(new java.awt.Color(204, 204, 204));
         LogoutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         LogoutPage.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,93 +329,15 @@ public class Main_Dashboard extends javax.swing.JFrame {
                 LogoutPageMouseExited(evt);
             }
         });
-        SideBar.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 80, 60));
+        logout.add(LogoutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_logout.png"))); // NOI18N
-        SideBar.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 80, 50));
+        logout.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
 
-        logout.setBackground(new java.awt.Color(51, 51, 51));
-        logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 80, 60));
+        SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 80, 60));
 
-        main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 80, 700));
-
-        jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("BARANGAY LIWANAG PORTAL");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("SCHEDULE");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, 30));
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("BARANGAY");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, 30));
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("FORUM");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 570, -1, 30));
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("VACCINATION");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, 30));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, 150));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 150));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("reports and assess the community demographics."); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 30));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Barangay Liwanag Portal is a multi-functional computer application that allows Barangay\n"); // NOI18N
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 30));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 70)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("iTrak");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("RESIDENTS");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, -1, 30));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("UPDATE");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, -1, 30));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, -1, 150));
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("officials to create, edit, delete, search for residents, create barangay documents,"); // NOI18N
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
-
-        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 770, 650));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_dashboard.png"))); // NOI18N
-        main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -524,7 +522,6 @@ public class Main_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel main;
     private javax.swing.JPanel officials;

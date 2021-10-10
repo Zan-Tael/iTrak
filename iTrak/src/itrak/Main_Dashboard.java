@@ -28,7 +28,6 @@ public class Main_Dashboard extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
         HomePage = new javax.swing.JLabel();
@@ -46,11 +45,12 @@ public class Main_Dashboard extends javax.swing.JFrame {
         OfficialPage = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         aboutus = new javax.swing.JPanel();
-        AboutPage = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        AboutPage = new javax.swing.JLabel();
         logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -71,28 +71,28 @@ public class Main_Dashboard extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SCHEDULE");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, 30));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("BARANGAY");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, 30));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, -1, 30));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("FORUM");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 570, -1, 30));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, -1, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("VACCINATION");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, 30));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, -1, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, 150));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, 150));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 150));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, 150));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,25 +112,22 @@ public class Main_Dashboard extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("RESIDENTS");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, -1, 30));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, -1, 30));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("UPDATE");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, -1, 30));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, -1, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3_dashboard.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, -1, 150));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, 150));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("officials to create, edit, delete, search for residents, create barangay documents,"); // NOI18N
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
 
-        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 770, 700));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_dashboard.png"))); // NOI18N
-        main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 720, 710));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -282,6 +279,10 @@ public class Main_Dashboard extends javax.swing.JFrame {
         aboutus.setBackground(new java.awt.Color(51, 51, 51));
         aboutus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
+        aboutus.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+
         AboutPage.setBackground(new java.awt.Color(204, 204, 204));
         AboutPage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AboutPage.setForeground(new java.awt.Color(255, 255, 255));
@@ -301,10 +302,6 @@ public class Main_Dashboard extends javax.swing.JFrame {
             }
         });
         aboutus.add(AboutPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 60));
-
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_user.png"))); // NOI18N
-        aboutus.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
 
         SideBar.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 80, 60));
 
@@ -338,6 +335,9 @@ public class Main_Dashboard extends javax.swing.JFrame {
         SideBar.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 80, 60));
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_dashboard.png"))); // NOI18N
+        main.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -499,7 +499,6 @@ public class Main_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel database;
     private javax.swing.JPanel documents;
     private javax.swing.JPanel home;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -514,6 +513,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

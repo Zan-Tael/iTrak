@@ -6,6 +6,8 @@
 package itrak;
 import java.awt.Color;
 
+import java.awt.Color;
+
 /**
  *
  * @author ZAEL
@@ -61,6 +63,27 @@ public class Officials_DataManager extends javax.swing.JFrame {
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Menu");
+        SideBar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        homePage.setBackground(new java.awt.Color(51, 51, 51));
+        homePage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homePageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                homePageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                homePageMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                homePageMouseReleased(evt);
+            }
+        });
+        homePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         home.setBackground(new java.awt.Color(51, 51, 51));
         home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -86,12 +109,24 @@ public class Officials_DataManager extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/32_home.png"))); // NOI18N
         home.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 50));
+        homePage.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 50, 50));
+        home.add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
         SideBar.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 60));
 
+        databasePage.setBackground(new java.awt.Color(51, 51, 51));
+        databasePage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         database.setBackground(new java.awt.Color(51, 51, 51));
         database.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/database_100.png"))); // NOI18N
+        database.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        jLabel14.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel14.setText("Database");
+        databasePage.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
         DatabasePage.setBackground(new java.awt.Color(204, 204, 204));
         DatabasePage.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DatabasePage.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,6 +317,9 @@ public class Officials_DataManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
+    
+        homePage.setForeground(Color.red);
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
         new Main_Dashboard().setVisible(true);
         this.dispose();
@@ -371,6 +409,26 @@ public class Officials_DataManager extends javax.swing.JFrame {
     private void LogoutPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseExited
         logout.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_LogoutPageMouseExited
+
+    private void homePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseClicked
+        // TODO add your handling code here:
+        homePage.setBackground(Color.gray);
+    }//GEN-LAST:event_homePageMouseClicked
+
+    private void homePageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseEntered
+        // TODO add your handling code here:
+        homePage.setBackground(new Color(61,178,255));
+    }//GEN-LAST:event_homePageMouseEntered
+
+    private void homePageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseExited
+        // TODO add your handling code here:
+         homePage.setBackground(new Color(1,100,50));
+    }//GEN-LAST:event_homePageMouseExited
+
+    private void homePageMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageMouseReleased
+        // TODO add your handling code here:
+        homePage.setBackground(new Color(1,100,50));
+    }//GEN-LAST:event_homePageMouseReleased
 
     /**
      * @param args the command line arguments

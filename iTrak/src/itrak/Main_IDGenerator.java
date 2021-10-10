@@ -72,6 +72,12 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         Refresh = new javax.swing.JButton();
         Generate = new javax.swing.JButton();
         pic = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
@@ -98,9 +104,9 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable2.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
@@ -135,17 +141,17 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 195, 468, 198));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 1120, 380));
 
         firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameActionPerformed(evt);
             }
         });
-        jPanel1.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 60, 123, -1));
-        jPanel1.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 98, 123, -1));
-        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 136, 123, -1));
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 29, 45, -1));
+        jPanel1.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 123, -1));
+        jPanel1.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 123, -1));
+        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 123, -1));
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, 20));
 
         Refresh.setText("REFRESH");
         Refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +159,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 RefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 38, 95, -1));
+        jPanel1.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 95, -1));
 
         Generate.setText("GENERATE");
         Generate.addActionListener(new java.awt.event.ActionListener() {
@@ -161,15 +167,32 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 GenerateActionPerformed(evt);
             }
         });
-        jPanel1.add(Generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 79, 95, -1));
+        jPanel1.add(Generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 95, -1));
 
-        pic.setText("jLabel1");
-        jPanel1.add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 175, -1, -1));
+        pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 140));
 
-        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
+        jLabel1.setText("LAST NAME:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+
+        jLabel2.setText("ID:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        jLabel3.setText("FIRST NAME:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+
+        jLabel4.setText("MIDDLE NAME:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel26.setText("ID GENERATOR");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 170, 30));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 260, 10));
+
+        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 1120, 610));
 
         jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1220, 50));
+        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1140, 50));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -382,7 +405,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -706,16 +729,22 @@ public class Main_IDGenerator extends javax.swing.JFrame {
     private javax.swing.JTextField firstName;
     private javax.swing.JPanel home;
     private javax.swing.JTextField id;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField lastName;
     private javax.swing.JPanel logout;

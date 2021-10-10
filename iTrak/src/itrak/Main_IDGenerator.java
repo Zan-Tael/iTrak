@@ -6,6 +6,7 @@
 package itrak;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -32,6 +33,7 @@ import java.io.File;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
+import org.imgscalr.Scalr;
 
 /**
  *
@@ -65,19 +67,25 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        firstName = new javax.swing.JTextField();
-        middleName = new javax.swing.JTextField();
-        lastName = new javax.swing.JTextField();
-        id = new javax.swing.JTextField();
         Refresh = new javax.swing.JButton();
         Generate = new javax.swing.JButton();
-        pic = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
+        DataOutput = new javax.swing.JPanel();
+        lblIcon = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
+        lblID = new javax.swing.JLabel();
+        addressField = new javax.swing.JTextField();
+        mobileField = new javax.swing.JTextField();
+        tellyField = new javax.swing.JTextField();
+        lblID1 = new javax.swing.JLabel();
+        genderField = new javax.swing.JTextField();
+        sexField = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
+        lblID2 = new javax.swing.JLabel();
+        lblID3 = new javax.swing.JLabel();
+        statusField = new javax.swing.JTextField();
+        lblID4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
@@ -141,17 +149,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 1120, 380));
-
-        firstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 123, -1));
-        jPanel1.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 123, -1));
-        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 123, -1));
-        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, 20));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 660, 380));
 
         Refresh.setText("REFRESH");
         Refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +157,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 RefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 95, -1));
+        jPanel1.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 95, -1));
 
         Generate.setText("GENERATE");
         Generate.addActionListener(new java.awt.event.ActionListener() {
@@ -167,32 +165,121 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 GenerateActionPerformed(evt);
             }
         });
-        jPanel1.add(Generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 95, -1));
-
-        pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 140));
-
-        jLabel1.setText("LAST NAME:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
-
-        jLabel2.setText("ID:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
-
-        jLabel3.setText("FIRST NAME:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
-
-        jLabel4.setText("MIDDLE NAME:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
+        jPanel1.add(Generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, 95, -1));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel26.setText("ID GENERATOR");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 170, 30));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 260, 10));
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 30));
 
-        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 1120, 610));
+        DataOutput.setBackground(new java.awt.Color(255, 255, 255));
+        DataOutput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DataOutput.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DataOutput.add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 180));
+
+        nameField.setEditable(false);
+        nameField.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        nameField.setBorder(null);
+        nameField.setOpaque(false);
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
+        DataOutput.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 350, -1));
+
+        txtID.setEditable(false);
+        txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtID.setAutoscrolls(false);
+        txtID.setBorder(null);
+        txtID.setFocusable(false);
+        txtID.setOpaque(false);
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
+        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDKeyTyped(evt);
+            }
+        });
+        DataOutput.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 50, -1));
+
+        lblID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblID.setText("Contant Information");
+        DataOutput.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 230, -1));
+
+        addressField.setEditable(false);
+        addressField.setBackground(new java.awt.Color(255, 255, 255));
+        addressField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        addressField.setBorder(null);
+        DataOutput.add(addressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 300, -1));
+
+        mobileField.setEditable(false);
+        mobileField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        mobileField.setBorder(null);
+        mobileField.setOpaque(false);
+        DataOutput.add(mobileField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 140, -1));
+
+        tellyField.setEditable(false);
+        tellyField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tellyField.setBorder(null);
+        tellyField.setOpaque(false);
+        DataOutput.add(tellyField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 140, -1));
+
+        lblID1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblID1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblID1.setText("Gender");
+        DataOutput.add(lblID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 50, -1));
+
+        genderField.setEditable(false);
+        genderField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        genderField.setBorder(null);
+        genderField.setOpaque(false);
+        DataOutput.add(genderField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 50, -1));
+
+        sexField.setEditable(false);
+        sexField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        sexField.setBorder(null);
+        sexField.setOpaque(false);
+        DataOutput.add(sexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 50, -1));
+
+        emailField.setEditable(false);
+        emailField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        emailField.setBorder(null);
+        emailField.setOpaque(false);
+        DataOutput.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 140, -1));
+
+        lblID2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblID2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblID2.setText("ID");
+        DataOutput.add(lblID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 20, -1));
+
+        lblID3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblID3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblID3.setText("Sex");
+        DataOutput.add(lblID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 20, -1));
+
+        statusField.setEditable(false);
+        statusField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        statusField.setBorder(null);
+        statusField.setOpaque(false);
+        DataOutput.add(statusField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 110, -1));
+
+        lblID4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblID4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblID4.setText("Status");
+        DataOutput.add(lblID4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 50, -1));
+
+        jPanel1.add(DataOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 660, 180));
+
+        main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 900, 610));
 
         jPanel4.setBackground(new java.awt.Color(61, 178, 255));
-        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1140, 50));
+        main.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 940, 50));
 
         SideBar.setBackground(new java.awt.Color(51, 51, 51));
         SideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -405,7 +492,9 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,13 +507,52 @@ public class Main_IDGenerator extends javax.swing.JFrame {
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         // TODO add your handling code here:
 
-        int selectRow = jTable2.getSelectedRow();
-        DefaultTableModel tblModel = (DefaultTableModel)jTable2.getModel();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM residents_db WHERE ID like '%" + txtID.getText() + "%'");
+            ResultSet result = stmnt.executeQuery();
 
-        id.setText(tblModel.getValueAt(selectRow,0).toString());
-        firstName.setText(tblModel.getValueAt(selectRow,2).toString());
-        middleName.setText(tblModel.getValueAt(selectRow,3).toString());
-        lastName.setText(tblModel.getValueAt(selectRow,1).toString());
+            DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
+
+            int selectRow = jTable2.getSelectedRow();
+            Object middle = tblModel.getValueAt(selectRow,4);
+            Object suffix = tblModel.getValueAt(selectRow,5);
+            while(result.next()){
+                txtID.setText(tblModel.getValueAt(selectRow,0).toString());
+                /* conditions if yung middle name or suffic is empty */
+                if (middle == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString());
+                }
+
+                else if(suffix == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,5).toString());
+                }
+
+                else if (middle == null && suffix == null){
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
+                }
+                else{
+                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
+                }
+                addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
+                mobileField.setText(result.getString("MobileNumber"));
+                tellyField.setText(result.getString("TelephoneNumber"));
+
+                byte[] image1x1 = result.getBytes("Image1");
+                BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                ImageIcon iconimage = new ImageIcon(Img1x1);
+                lblIcon.setIcon(iconimage);
+            }
+            conn.close();
+
+        }
+
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error ka nanaman pards");
+            System.out.println(e.getMessage());
+        }
+        
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void jTable2ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable2ComponentResized
@@ -444,10 +572,6 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         columnModel.getColumn(11).setPreferredWidth(80);
     }//GEN-LAST:event_jTable2ComponentResized
 
-    private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameActionPerformed
-
     private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
         // TODO add your handling code here:
 
@@ -458,45 +582,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
             Statement st = con.createStatement();
 
-            String sql = "SELECT * FROM BRGYOFFICIALS_DB ORDER BY id ASC";
-            ResultSet rs = st.executeQuery(sql);
-
-            DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
-            tblModel.setRowCount(0);
-
-            while(rs.next()){
-                String id = String.valueOf(rs.getInt("ID"));
-                String lastname = rs.getString("LASTNAME");
-                String firstname = rs.getString("FIRSTNAME");
-                String middlename = rs.getString("MIDDLENAME");
-                String suffix  = rs.getString("SUFFIXNAME");
-                String sex = rs.getString("SEX");
-                String gender = rs.getString("GENDER");
-                String birthdate = rs.getString("BIRTHDATE");
-                String telly = rs.getString("TELEPHONENUMBER");
-                String mobile = rs.getString("MOBILENUMBER");
-                String email = rs.getString("EMAILADDRESS");
-                String status = rs.getString("STATUS");
-
-                String tbData[] = {id, lastname, firstname, middlename, suffix, sex, gender, birthdate, telly, mobile, email, status };
-
-                tblModel.addRow(tbData);
-            }
-            con.close();
-        }
-
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-        //Database Connectoin
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            Statement st = con.createStatement();
-
-            String sql = "SELECT * BRGYOFFICIALS_DB ORDER BY id ASC";
+            String sql = "SELECT * FROM residents_db ORDER BY id ASC";
             ResultSet rs = st.executeQuery(sql);
 
             DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
@@ -531,60 +617,77 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
     private void GenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateActionPerformed
         // TODO add your handling code here:
-
-        try{
-            int width = 350;
-            int height = 500;
-
-            // Constructs a BufferedImage of one of the predefined image types.
-            BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-            BufferedImage img = null;
-
-            // Create a graphics which can be used to draw into the buffered image
-            Graphics2D g2d = bufferedImage.createGraphics();
-
-            // fill all the image with white
-            g2d.setColor(Color.white);
-            g2d.fillRect(0, 0, width, height);
-
+         try{
+        int width = 500;
+        int height = 350;
+ 
+        // Constructs a BufferedImage of one of the predefined image types.
+        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        
+        // Create a graphics which can be used to draw into the buffered image
+        Graphics2D g2d = bufferedImage.createGraphics();
+ 
+        // fill all the image with white
+        g2d.setBackground(Color.white);
+        g2d.fillRect(0, 0, width, height);
+        
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
             Statement st = con.createStatement();
-            String sql = "SELECT * FROM BRGYOFFICIALS_DB WHERE id =" + id.getText();
+            String sql = "SELECT * FROM residents_db WHERE id =" + txtID.getText();
             ResultSet rs = st.executeQuery(sql);
-
-            g2d.setColor(Color.black);
-            g2d.drawString("Name: "+firstName.getText()+" "+lastName.getText(), 100, 450);
-
+            
             while(rs.next()){
+            
+                Color fontColor = Color.decode("#000000");
+                g2d.setColor(fontColor);
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
+                g2d.drawString( "NAME: ", 35, 75);
+                g2d.drawString( nameField.getText(), 35, 100);
+                g2d.drawString( "ADDRESS:", 35, 150);
+                
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 15)); 
+                g2d.drawString( rs.getString("HOUSENUMBER")+" "+rs.getString("STREET")+ " Street", 35, 175);
+                g2d.drawString(" Brgy. Liwanag, Mexico City",35 , 195);
+                
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
+                g2d.drawString( "Contact Number: ", 35, 250);
+                g2d.drawString( rs.getString("MOBILENUMBER"), 35, 275);  
 
                 byte[] image1x1 = rs.getBytes("Image1");
                 BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+
                 /*^^^^ Picture for 1x1 Image ^^^*/
 
                 byte[] imageSig = rs.getBytes("Image2");
                 BufferedImage ImgSig = ImageIO.read(new ByteArrayInputStream(imageSig));
+                BufferedImage ImgSigFinal = Scalr.resize(ImgSig, Scalr.Method.BALANCED, ImgSig.getWidth()/3, ImgSig.getHeight()/3);
                 /*^^^^ Picture for Signature Image ^^^*/
 
-                g2d.drawImage( Img1x1, 100, 30, this );
-                g2d.drawImage( ImgSig, 100, 270, this );
+
+                g2d.drawImage( Img1x1Final, 300, 75, this );
+
+                g2d.drawImage( ImgSigFinal, 300, 250, this );
+            
             }
-            // Disposes of this graphics context and releases any system resources that it is using.
-            g2d.dispose();
-
-            // Save as JPEG
-            File file = new File(lastName.getText()+" ID Sample.jpg");
-            ImageIO.write(bufferedImage, "jpg", file);
-
-            JOptionPane.showMessageDialog(this,"Tama ka na pards");
-
+        // Disposes of this graphics context and releases any system resources that it is using. 
+        g2d.dispose();
+ 
+        // Save as JPEG
+        File file = new File(nameField.getText()+" ID Sample.jpg");
+        ImageIO.write(bufferedImage, "jpg", file);
+        
+        JOptionPane.showMessageDialog(this,"Tama ka na pards");
+            
+            
+           
         }
-
+        
         catch(Exception e){
             System.out.println(e.getMessage());
         }
-
     }//GEN-LAST:event_GenerateActionPerformed
 
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
@@ -677,6 +780,24 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         logout.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_LogoutPageMouseExited
 
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+        // TODO add your handling code here:
+
+        char c = evt.getKeyChar();
+
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIDKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -688,7 +809,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -714,6 +835,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AboutPage;
+    private javax.swing.JPanel DataOutput;
     private javax.swing.JLabel DatabasePage;
     private javax.swing.JLabel DocumentPage;
     private javax.swing.JButton Generate;
@@ -724,21 +846,18 @@ public class Main_IDGenerator extends javax.swing.JFrame {
     private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
+    private javax.swing.JTextField addressField;
     private javax.swing.JPanel database;
     private javax.swing.JPanel documents;
-    private javax.swing.JTextField firstName;
+    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField genderField;
     private javax.swing.JPanel home;
-    private javax.swing.JTextField id;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -746,12 +865,21 @@ public class Main_IDGenerator extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField lastName;
+    private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblID1;
+    private javax.swing.JLabel lblID2;
+    private javax.swing.JLabel lblID3;
+    private javax.swing.JLabel lblID4;
+    private javax.swing.JLabel lblIcon;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel main;
-    private javax.swing.JTextField middleName;
+    private javax.swing.JTextField mobileField;
+    private javax.swing.JTextField nameField;
     private javax.swing.JPanel officials;
-    private javax.swing.JLabel pic;
     private javax.swing.JPanel reports;
+    private javax.swing.JTextField sexField;
+    private javax.swing.JTextField statusField;
+    private javax.swing.JTextField tellyField;
+    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/elain/iTrak/iTrak/src/itrak/Resident_Insert.java</file>
-            <file>file:/C:/Users/elain/iTrak/iTrak/src/itrak/Main_Dashboard.java</file>
-            <file>file:/C:/Users/elain/iTrak/iTrak/src/itrak/Main_IDGenerator.java</file>
-            <file>file:/C:/Users/elain/iTrak/iTrak/src/itrak/Main_Login.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/ID.txt</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Main_Login.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Main_IDGenerator.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Resident_DataManager.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Officials_Update.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Resident_Insert.java</file>
+            <file>file:/C:/Users/ZAEL/iTrak/iTrak/src/itrak/Main_Dashboard.java</file>
         </group>
     </open-files>
 </project-private>

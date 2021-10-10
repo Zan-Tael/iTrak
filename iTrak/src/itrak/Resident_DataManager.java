@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.Color;
 
+
 public class Resident_DataManager extends javax.swing.JFrame {
 
     static final String USER = "system"; //Database Username

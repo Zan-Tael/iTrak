@@ -47,42 +47,41 @@ public class Main_Signup extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        usernameField1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         usernameField2 = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        usernameField4 = new javax.swing.JTextField();
-        jSeparator8 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         passwordField1 = new javax.swing.JPasswordField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         passwordField2 = new javax.swing.JPasswordField();
         jSeparator7 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(61, 178, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel16.setText("iTrak");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel16.setText("Sign Up");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         usernameField.setBorder(null);
         usernameField.setOpaque(false);
-        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 159, -1));
+        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 130, 20));
+        usernameField.getAccessibleContext().setAccessibleName("");
 
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Confirm Password:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, 20));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel2.setText("Confirm:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 90, 20));
 
         passwordField.setBorder(null);
         passwordField.setOpaque(false);
@@ -91,66 +90,38 @@ public class Main_Signup extends javax.swing.JFrame {
                 passwordFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 160, -1));
+        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, 20));
 
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel4.setText("First Name:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 76, 20));
-
-        jToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Sign-up");
-        jToggleButton1.setBorder(null);
-        jToggleButton1.setBorderPainted(false);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 80, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 90, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 200, 10));
+        jSeparator3.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 130, 10));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, 10));
-
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Middle Name:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 76, 20));
-
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 10));
-
-        usernameField1.setBorder(null);
-        usernameField1.setOpaque(false);
-        jPanel1.add(usernameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 159, -1));
+        jSeparator4.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 130, 10));
 
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel8.setText("Last Name:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 76, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 80, 20));
 
         usernameField2.setBorder(null);
         usernameField2.setOpaque(false);
-        jPanel1.add(usernameField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 159, -1));
+        jPanel1.add(usernameField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 130, 20));
 
         jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, 10));
-
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Position:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 76, 20));
-
-        usernameField4.setBorder(null);
-        usernameField4.setOpaque(false);
-        jPanel1.add(usernameField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 159, -1));
-
-        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 200, 10));
+        jSeparator6.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 130, 10));
 
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel11.setText("Username:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, 20));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 20));
 
         passwordField1.setBorder(null);
         passwordField1.setOpaque(false);
@@ -159,14 +130,16 @@ public class Main_Signup extends javax.swing.JFrame {
                 passwordField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, -1));
+        jPanel1.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 130, 20));
 
         jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 10));
+        jSeparator9.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 130, 10));
 
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel9.setText("Password:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 20));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 20));
 
         passwordField2.setBorder(null);
         passwordField2.setOpaque(false);
@@ -175,95 +148,39 @@ public class Main_Signup extends javax.swing.JFrame {
                 passwordField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 160, -1));
+        jPanel1.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 130, 20));
 
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 200, 10));
+        jSeparator7.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 130, 10));
+
+        jLabel7.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Sign Up");
+        jLabel7.setOpaque(true);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jLabel6.setText("Already have an account?");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 130, 20));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 9)); // NOI18N
+        jLabel1.setText("Sign-in.");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 40, 20));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 500));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_signup.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 430, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-        if(usernameField.getText().isEmpty()==true && passwordField.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please type your username and password!");}
-
-        else{
-            try{
-                //Create Connection to ORACLE DB SERVER
-                Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-                //Check if connected
-                if (conn != null) {
-                    System.out.println("Connected");}
-
-                else{
-                    System.out.println("Connection Error");}
-
-                String userVal = usernameField.getText();
-                String passVal = passwordField.getText();
-                String sql = "SELECT count(*) from brgyofficials_db WHERE username='" + userVal + "' AND password='" + passVal+"' AND ADMIN = 1";
-
-                //'PreparedStatement' - an object that represents a precompiled SQL statement
-                PreparedStatement ps = conn.prepareStatement(sql);
-
-                //'ResultSet' - a table of data representing a database result set
-                ResultSet rs = ps.executeQuery();
-
-                //rs.next() is a method of the ResultSet interface moves the pointer of the current (ResultSet) object to the next row
-                rs.next(); //
-
-                //Check result if more than 0
-                int count = rs.getInt(1);
-                if(count>0){
-                    JOptionPane.showMessageDialog(null, "Login Success!");
-                    System.out.println ("User "+ userVal+" has successfully logged in!" );
-                }
-
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid account,please try again!");}
-
-                //Close the connection
-                conn.close();
-
-            }
-            catch(SQLException se){
-                System.out.println(se);
-            }
-        }
-
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
         // TODO add your handling code here:
@@ -284,7 +201,7 @@ public class Main_Signup extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -309,30 +226,26 @@ public class Main_Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JPasswordField passwordField1;
     private javax.swing.JPasswordField passwordField2;
     private javax.swing.JTextField usernameField;
-    private javax.swing.JTextField usernameField1;
     private javax.swing.JTextField usernameField2;
-    private javax.swing.JTextField usernameField4;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package itrak;
-import static itrak.Resident_Insert.DB_URL;
-import static itrak.Resident_Insert.PASS;
-import static itrak.Resident_Insert.USER;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -37,6 +34,13 @@ public class Officials_Update extends javax.swing.JFrame {
         initComponents();
     }
 
+     
+    static final String USER = "system"; //Database Username
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -152,6 +156,7 @@ public class Officials_Update extends javax.swing.JFrame {
         insert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -635,24 +640,9 @@ public class Officials_Update extends javax.swing.JFrame {
                 insertActionPerformed(evt);
             }
         });
-        main.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 770, 530, -1));
+        main.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 680, 530, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1158,5 +1148,4 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JTextField username;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
-
-
+}

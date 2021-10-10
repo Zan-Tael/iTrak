@@ -40,17 +40,16 @@ public class Main_Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,22 +58,17 @@ public class Main_Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(61, 178, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel16.setText("iTrak");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 9)); // NOI18N
         jLabel1.setText("Sign-up.");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 40, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 40, 20));
 
         usernameField.setBorder(null);
         usernameField.setOpaque(false);
-        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 236, 159, -1));
+        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 160, 20));
 
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Password:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, 20));
 
         passwordField.setBorder(null);
         passwordField.setOpaque(false);
@@ -83,36 +77,34 @@ public class Main_Login extends javax.swing.JFrame {
                 passwordFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 160, -1));
+        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 160, 20));
 
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Username:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 76, 20));
-
-        jToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Sign-in");
-        jToggleButton1.setBorder(null);
-        jToggleButton1.setBorderPainted(false);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 80, 20));
-
-        jLabel5.setText("Sign-in to continue.");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 120, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 76, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         jLabel6.setText("Doesn't have an account?");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 100, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 130, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 160, 10));
+        jSeparator3.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 160, -1));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 160, 10));
+        jSeparator4.setForeground(new java.awt.Color(61, 178, 255));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 160, 10));
+
+        jLabel7.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Sign In");
+        jLabel7.setOpaque(true);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 30));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel16.setText("Sign In");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 500));
 
@@ -120,58 +112,8 @@ public class Main_Login extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 430, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-        if(usernameField.getText().isEmpty()==true && passwordField.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Please type your username and password!");}
-                   
-                   else{ 
-                        try{
-                            //Create Connection to ORACLE DB SERVER
-                            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS); 
-                    
-                            //Check if connected
-                            if (conn != null) {
-                                System.out.println("Connected");}
-                           
-                            else{
-                        System.out.println("Connection Error");}
-                 
-                String userVal = usernameField.getText();
-                String passVal = passwordField.getText();
-                String sql = "SELECT count(*) from brgyofficials_db WHERE username='" + userVal + "' AND password='" + passVal+"' AND ADMIN = 1";
-                
-                //'PreparedStatement' - an object that represents a precompiled SQL statement
-                PreparedStatement ps = conn.prepareStatement(sql);
-                
-                //'ResultSet' - a table of data representing a database result set
-                ResultSet rs = ps.executeQuery();
-                
-                //rs.next() is a method of the ResultSet interface moves the pointer of the current (ResultSet) object to the next row
-                rs.next(); //
-                
-                //Check result if more than 0
-                int count = rs.getInt(1);
-                if(count>0){
-                    JOptionPane.showMessageDialog(null, "Login Success!");
-                    System.out.println ("User "+ userVal+" has successfully logged in!" );
-                }
-                
-                else{
-                    JOptionPane.showMessageDialog(null, "Invalid account,please try again!");}
-                
-                //Close the connection
-                conn.close();                          
-                    
-                }
-                        catch(SQLException se){
-                    System.out.println(se); 
-                } 
-            }              
-        
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
@@ -188,7 +130,7 @@ public class Main_Login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -218,12 +160,11 @@ public class Main_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables

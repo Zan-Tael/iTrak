@@ -1,0 +1,72 @@
+ try{
+        int width = 500;
+        int height = 350;
+ 
+        // Constructs a BufferedImage of one of the predefined image types.
+        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        
+        // Create a graphics which can be used to draw into the buffered image
+        Graphics2D g2d = bufferedImage.createGraphics();
+ 
+        // fill all the image with white
+        g2d.setBackground(Color.white);
+        g2d.fillRect(0, 0, width, height);
+        
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM residents_db WHERE id =" + idTxt.getText();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while(rs.next()){
+            
+                Color fontColor = Color.decode("#000000");
+                g2d.setColor(fontColor);
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
+                g2d.drawString( "NAME: ", 35, 75);
+                g2d.drawString( firstName.getText()+" "+lastName.getText(), 35, 100);
+                g2d.drawString( "ADDRESS:", 35, 150);
+                
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 15)); 
+                g2d.drawString( rs.getString("HOUSENUMBER")+" "+rs.getString("STREET")+ " Street", 35, 175);
+                g2d.drawString(" Brgy. Liwanag, Mexico City",35 , 195);
+                
+                g2d.setFont(new Font("TimesRoman", Font.BOLD, 25)); 
+                g2d.drawString( "Contact Number: ", 35, 250);
+                g2d.drawString( rs.getString("MOBILENUMBER"), 35, 275);  
+
+                byte[] image1x1 = rs.getBytes("Image1");
+                BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+
+                /*^^^^ Picture for 1x1 Image ^^^*/
+
+                byte[] imageSig = rs.getBytes("Image2");
+                BufferedImage ImgSig = ImageIO.read(new ByteArrayInputStream(imageSig));
+                BufferedImage ImgSigFinal = Scalr.resize(ImgSig, Scalr.Method.BALANCED, ImgSig.getWidth()/3, ImgSig.getHeight()/3);
+                /*^^^^ Picture for Signature Image ^^^*/
+
+
+                g2d.drawImage( Img1x1Final, 300, 75, this );
+
+                g2d.drawImage( ImgSigFinal, 300, 250, this );
+            
+            }
+        // Disposes of this graphics context and releases any system resources that it is using. 
+        g2d.dispose();
+ 
+        // Save as JPEG
+        File file = new File(lastName.getText()+" ID Sample.jpg");
+        ImageIO.write(bufferedImage, "jpg", file);
+        
+        JOptionPane.showMessageDialog(this,"Tama ka na pards");
+            
+            
+           
+        }
+        
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        

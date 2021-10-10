@@ -36,9 +36,9 @@ public class Resident_Insert extends javax.swing.JFrame {
     
      
     static final String USER = "system"; //Database Username
-    static final String PASS = "Admin123"; //Your Account Password
-    static final String DATABASE = "ztt"; //Database Name
-    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     public Resident_Insert() {

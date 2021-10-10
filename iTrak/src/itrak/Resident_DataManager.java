@@ -20,9 +20,9 @@ import java.awt.Color;
 public class Resident_DataManager extends javax.swing.JFrame {
 
     static final String USER = "system"; //Database Username
-    static final String PASS = "Admin123"; //Your Account Password
-    static final String DATABASE = "ztt"; //Database Name
-    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
@@ -143,7 +143,6 @@ public class Resident_DataManager extends javax.swing.JFrame {
         lblID4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));

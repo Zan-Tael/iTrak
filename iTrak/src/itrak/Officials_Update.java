@@ -4,7 +4,25 @@
  * and open the template in the editor.
  */
 package itrak;
+import static itrak.Resident_Insert.DB_URL;
+import static itrak.Resident_Insert.PASS;
+import static itrak.Resident_Insert.USER;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import org.imgscalr.Scalr;
 
 /**
  *
@@ -52,6 +70,86 @@ public class Officials_Update extends javax.swing.JFrame {
         logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        Photo = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        uploadPicture = new javax.swing.JButton();
+        fileName1x1 = new javax.swing.JTextField();
+        img1x1 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        fileNameSignature = new javax.swing.JTextField();
+        uploadSignature = new javax.swing.JButton();
+        imageSignature = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        Form = new javax.swing.JPanel();
+        firstName = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        middleName = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        lastName = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        suffix = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        date = new javax.swing.JFormattedTextField();
+        sexBox = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        gender = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        civilStatus = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        telephone = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        mobile = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        emailAddress = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        religion = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        nationality = new javax.swing.JTextField();
+        lotNum = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        street = new javax.swing.JTextField();
+        status = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        occupation = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel29 = new javax.swing.JLabel();
+        sss = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        philHealth = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        tin = new javax.swing.JTextField();
+        height = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        weight = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        idField = new javax.swing.JTextField();
+        Find = new javax.swing.JButton();
+        username = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        password = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        position = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        start = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        end = new javax.swing.JTextField();
+        posstat = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        admin = new javax.swing.JTextField();
+        insert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -268,15 +366,292 @@ public class Officials_Update extends javax.swing.JFrame {
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
 
+        Photo.setBackground(new java.awt.Color(255, 255, 255));
+        Photo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Profile Picture");
+        Photo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 166, -1));
+
+        uploadPicture.setText("UPLOAD");
+        uploadPicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadPictureActionPerformed(evt);
+            }
+        });
+        Photo.add(uploadPicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 166, -1));
+
+        fileName1x1.setEditable(false);
+        fileName1x1.setBorder(null);
+        fileName1x1.setOpaque(false);
+        fileName1x1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileName1x1ActionPerformed(evt);
+            }
+        });
+        Photo.add(fileName1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 166, -1));
+
+        img1x1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img1x1.setText("PIRMA HERE");
+        img1x1.setToolTipText("");
+        img1x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Photo.add(img1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 166, 166));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Signature");
+        Photo.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 166, -1));
+
+        fileNameSignature.setEditable(false);
+        fileNameSignature.setToolTipText("");
+        fileNameSignature.setBorder(null);
+        fileNameSignature.setOpaque(false);
+        Photo.add(fileNameSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 166, -1));
+
+        uploadSignature.setText("UPLOAD");
+        uploadSignature.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadSignatureActionPerformed(evt);
+            }
+        });
+        Photo.add(uploadSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 166, -1));
+
+        imageSignature.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageSignature.setText("PIRMA HERE");
+        imageSignature.setToolTipText("");
+        imageSignature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Photo.add(imageSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 166, 166));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        Photo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 166, 10));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        Photo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 166, 10));
+
+        main.add(Photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 210, 590));
+
+        Form.setBackground(new java.awt.Color(255, 255, 255));
+        Form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        firstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameActionPerformed(evt);
+            }
+        });
+        Form.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 150, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Contact Information");
+        Form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 190, -1));
+        Form.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 150, -1));
+
+        jLabel5.setText("Middle Name");
+        Form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 150, -1));
+        Form.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 150, -1));
+
+        jLabel2.setText("Last name*");
+        Form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 150, -1));
+
+        suffix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suffixActionPerformed(evt);
+            }
+        });
+        Form.add(suffix, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 48, -1));
+
+        jLabel7.setText("Suffix");
+        Form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 50, -1));
+
+        date.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/dd/yyyy"))));
+        date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateActionPerformed(evt);
+            }
+        });
+        Form.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, -1));
+
+        sexBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        Form.add(sexBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+
+        jLabel8.setText("Sex*");
+        Form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 34, -1));
+
+        jLabel15.setText("Gender*");
+        Form.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 100, 10));
+
+        gender.setName(""); // NOI18N
+        Form.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 100, -1));
+
+        jLabel16.setText("Birth Date");
+        Form.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 150, -1));
+
+        civilStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married", "Widowed", "Divorced" }));
+        civilStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                civilStatusActionPerformed(evt);
+            }
+        });
+        Form.add(civilStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 110, -1));
+
+        jLabel3.setText("Civil Status*");
+        Form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 90, -1));
+        Form.add(telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 160, -1));
+
+        jLabel18.setText("Telephone Number");
+        Form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 150, -1));
+        Form.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, -1));
+
+        jLabel19.setText("Mobile Number");
+        Form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 150, -1));
+        Form.add(emailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 190, -1));
+
+        jLabel20.setText("Email Address");
+        Form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 150, -1));
+        Form.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 530, 10));
+
+        jLabel17.setText("Religion*");
+        Form.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 70, -1));
+        Form.add(religion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
+
+        jLabel21.setText("Nationality");
+        Form.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 66, -1));
+        Form.add(nationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 100, -1));
+
+        lotNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lotNumActionPerformed(evt);
+            }
+        });
+        Form.add(lotNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 70, -1));
+
+        jLabel22.setText("Block Number");
+        Form.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
+
+        jLabel24.setText("Street*");
+        Form.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        Form.add(street, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 110, -1));
+
+        status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alive", "Dead", "Missing", " " }));
+        Form.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 60, -1));
+
+        jLabel25.setText("Status");
+        Form.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+
+        jLabel26.setText("Occupation");
+        Form.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 100, -1));
+        Form.add(occupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, -1));
+        Form.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 530, 10));
+
+        jLabel27.setText("First Name*");
+        Form.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, -1));
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel28.setText("Basic Information");
+        Form.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, -1));
+        Form.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 530, 20));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel29.setText("Additional Information");
+        Form.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 210, -1));
+        Form.add(sss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 160, -1));
+
+        jLabel30.setText("SSS");
+        Form.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+
+        jLabel31.setText("PhilHealth");
+        Form.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 380, 60, -1));
+        Form.add(philHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 400, 160, -1));
+
+        jLabel32.setText("TIN");
+        Form.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
+        Form.add(tin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 160, -1));
+        Form.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 70, -1));
+
+        jLabel33.setText("Height");
+        Form.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+
+        jLabel34.setText("Weight");
+        Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
+        Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 70, -1));
+
+        jLabel35.setText("INSERT ID:");
+        Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 60, 20));
+        Form.add(idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 40, -1));
+
+        Find.setText("FIND");
+        Find.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindActionPerformed(evt);
+            }
+        });
+        Form.add(Find, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 20, 60, -1));
+        Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 130, -1));
+
+        jLabel37.setText("Username");
+        Form.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
+
+        jLabel38.setText("Password");
+        Form.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
+        Form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 130, -1));
+
+        jLabel41.setText("Position");
+        Form.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, -1));
+        Form.add(position, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, -1));
+
+        jLabel40.setText("Start Date");
+        Form.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
+        Form.add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 130, -1));
+
+        jLabel36.setText("End Date");
+        Form.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, -1, -1));
+
+        end.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endActionPerformed(evt);
+            }
+        });
+        Form.add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 130, -1));
+        Form.add(posstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 130, -1));
+
+        jLabel42.setText("Position Status");
+        Form.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
+
+        jLabel39.setText("Admin");
+        Form.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, -1, -1));
+
+        admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminActionPerformed(evt);
+            }
+        });
+        Form.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 130, -1));
+
+        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
+
+        insert.setText("UPDATE");
+        insert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertActionPerformed(evt);
+            }
+        });
+        main.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 770, 530, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -372,6 +747,276 @@ public class Officials_Update extends javax.swing.JFrame {
         logout.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_LogoutPageMouseExited
 
+    private void uploadPictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadPictureActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        fileName1x1.setText(filename);
+
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(157, 110,Image.SCALE_SMOOTH);
+        img1x1.setIcon(icon);
+    }//GEN-LAST:event_uploadPictureActionPerformed
+
+    private void fileName1x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileName1x1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fileName1x1ActionPerformed
+
+    private void uploadSignatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadSignatureActionPerformed
+        // TODO add your handling code here:
+
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        fileNameSignature.setText(filename);
+
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(300, 300,Image.SCALE_SMOOTH);
+        imageSignature.setIcon(icon);
+    }//GEN-LAST:event_uploadSignatureActionPerformed
+
+    private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameActionPerformed
+
+    private void suffixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suffixActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suffixActionPerformed
+
+    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateActionPerformed
+
+    private void civilStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_civilStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_civilStatusActionPerformed
+
+    private void lotNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lotNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lotNumActionPerformed
+
+    private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            System.out.println("Connected ka na Oracle database pre");
+            String query = "UPDATE BRGYOFFICIALS_DB SET "
+            +"FIRSTNAME = ?, MIDDLENAME = ?, LASTNAME = ?, SUFFIXNAME = ?, BIRTHDATE = ?, GENDER = ?, SEX = ?, HOUSENUMBER = ?, STREET = ?, "
+            +"CIVILSTATUS = ?, RELIGION = ?, STATUS = ?, NATIONALITY = ?, OCCUPATION = ?, SSS = ?, PHILHEALTH = ?, TIN = ?, TELEPHONENUMBER = ?,"
+            +"MOBILENUMBER = ?, HEIGHT = ?, WEIGHT = ?, EMAILADDRESS = ?, IMAGE1 = ?, IMAGE2 = ?, USERNAME = ?, PASSWORD = ?, POSITION = ?,"
+            +"STARTDATE = ?, ENDDATE = ?, POS_STATUS = ?, ADMIN = ? ";
+
+            PreparedStatement stmnt = conn.prepareStatement(query);
+
+            stmnt.setString(1, firstName.getText());
+            stmnt.setString(2, middleName.getText());
+            stmnt.setString(3, lastName.getText());
+            stmnt.setString(4, suffix.getText());
+            stmnt.setString(5, date.getText());
+            stmnt.setString(6, gender.getText());
+            stmnt.setString(7, (String) sexBox.getSelectedItem());
+            stmnt.setString(8, lotNum.getText());
+            stmnt.setString(9, street.getText());
+            stmnt.setString(10, (String) civilStatus.getSelectedItem());
+            stmnt.setString(11, religion.getText());
+            stmnt.setString(12, (String) status.getSelectedItem());
+            stmnt.setString(13, nationality.getText());
+            stmnt.setString(14, occupation.getText());
+            stmnt.setString(15, sss.getText());
+            stmnt.setString(16, philHealth.getText());
+            stmnt.setString(17, tin.getText());
+            stmnt.setString(18, telephone.getText());
+            stmnt.setString(19, mobile.getText());
+            stmnt.setString(20, height.getText());
+            stmnt.setString(21, weight.getText());
+            stmnt.setString(22, emailAddress.getText());
+            stmnt.setString(25, username.getText());
+            stmnt.setString(26, password.getText());
+            stmnt.setString(27, position.getText());
+            stmnt.setString(28, start.getText());
+            stmnt.setString(29, end.getText());
+            stmnt.setString(30, posstat.getText());
+            stmnt.setString(31, admin.getText());
+
+
+            InputStream onebyone = new FileInputStream(""+fileName1x1.getText()+"");
+            InputStream signature = new FileInputStream(""+fileNameSignature.getText()+"");
+
+            if(fileName1x1 == null){
+                fileName1x1.setText("C:\\Users\\user\\Documents\\PicturesUsed\\default1x1.jpg");
+                stmnt.setBlob(23, onebyone);
+
+            }
+
+            else{
+                stmnt.setBlob(23, onebyone);
+            }
+
+            if(fileNameSignature == null){
+                fileNameSignature.setText("C:\\Users\\user\\Documents\\PicturesUsed\\signatureDefault.png");
+                stmnt.setBlob(24, signature);
+            }
+
+            else{
+                stmnt.setBlob(24, signature);
+            }
+
+            stmnt.execute();
+            conn.close();
+            System.out.println("Tama ka na pre");
+
+        }
+        catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_insertActionPerformed
+
+    private void FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindActionPerformed
+        // TODO add your handling code here:
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Integer idValue = Integer.parseInt(idField.getText());
+            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM BRGYOFFICIALS_DB WHERE ID LIKE '%" + idField.getText() + "%' ");
+            ResultSet rs = stmnt.executeQuery();
+
+            while(rs.next()){
+                String lastnameVal = rs.getString("LASTNAME");
+                String firstnameVal = rs.getString("FIRSTNAME");
+                String middlenameVal = rs.getString("MIDDLENAME");
+                String suffixVal  = rs.getString("SUFFIXNAME");
+                String birthdateVal = rs.getString("BIRTHDATE");
+                String sexVal = rs.getString("SEX");
+                String genderVal = rs.getString("GENDER");
+                String lotVal = rs.getString("HOUSENUMBER");
+                String streetVal = rs.getString("STREET");
+                String civstatVal = rs.getString("CIVILSTATUS");
+                String religonVal = rs.getString("RELIGION");
+                String nationVal = rs.getString("NATIONALITY");
+                String statVal = rs.getString("STATUS");
+                String occVal = rs.getString("OCCUPATION");
+                String sssVal = rs.getString("SSS");
+                String phealthVal = rs.getString("PHILHEALTH");
+                String tinVal = rs.getString("TIN");
+                String tellyVal = rs.getString("TELEPHONENUMBER");
+                String mobileVal = rs.getString("MOBILENUMBER");
+                String heightVal = rs.getString("HEIGHT");
+                String weightVal = rs.getString("WEIGHT");
+                String emailVal = rs.getString("EMAILADDRESS");
+                
+                String usernameVal = rs.getString("USERNAME");
+                String passwordVal = rs.getString("PASSWORD");
+                String positionVal = rs.getString("POSITION");
+                String startVal = rs.getString("START_DATE");
+                String endVal = rs.getString("END_DATE");
+                String posstatVal = rs.getString("POSITION_STATUS");
+                String adminVal = rs.getString("ADMIN");
+                        
+          
+          
+
+                firstName.setText(firstnameVal);
+                if(middlenameVal == null){
+                    middleName.setText(" ");
+                }
+                else{
+                    middleName.setText(middlenameVal);
+                }
+
+                lastName.setText(lastnameVal);
+
+                if(suffix == null){
+                    suffix.setText(" ");
+                }
+                else{
+                    suffix.setText(suffixVal);
+                }
+
+                date.setText(birthdateVal);
+                sexBox.setSelectedItem(sexVal);
+                gender.setText(genderVal);
+                lotNum.setText(lotVal);
+                street.setText(streetVal);
+                civilStatus.setSelectedItem(civstatVal);
+                religion.setText(religonVal);
+                nationality.setText(nationVal);
+                status.setSelectedItem(statVal);
+                occupation.setText(occVal);
+                if(sssVal == null){
+                    sss.setText(" ");
+                }
+                else{
+                    sss.setText(sssVal);
+                }
+                if(phealthVal == null){
+                    philHealth.setText(" ");
+                }
+                else{
+                    philHealth.setText(phealthVal);
+                }
+                if(tinVal == null){
+                    tin.setText(" ");
+                }
+                else{
+                    tin.setText(tinVal);
+                }
+
+                telephone.setText(tellyVal);
+                mobile.setText(mobileVal);
+                emailAddress.setText(emailVal);
+                height.setText(heightVal);
+                weight.setText(weightVal);
+                
+                username.setText(usernameVal);
+                   
+                password.setText(passwordVal);
+                position.setText(positionVal); 
+                start.setText(startVal);   
+                end.setText(endVal);   
+                posstat.setText(posstatVal);   
+                admin.setText(adminVal);
+                
+
+
+                byte[] image1x1 = rs.getBytes("Image1");
+                BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+                ImageIcon iconimage1x1 = new ImageIcon(Img1x1Final);
+                img1x1.setIcon(iconimage1x1);
+
+                byte[] imageSig = rs.getBytes("Image2");
+                BufferedImage ImgSgn = ImageIO.read(new ByteArrayInputStream(imageSig));
+                BufferedImage ImgSgnFinal = Scalr.resize(ImgSgn, Scalr.Method.BALANCED, ImgSgn.getWidth()/2, ImgSgn.getHeight()/2);
+                ImageIcon iconimageSig = new ImageIcon(ImgSgnFinal);
+                imageSignature.setIcon(iconimageSig);
+            }
+
+            conn.close();
+
+        }
+
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error ka nanaman pards");
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_FindActionPerformed
+
+    private void endActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_endActionPerformed
+
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -411,26 +1056,107 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JLabel AboutPage;
     private javax.swing.JLabel DatabasePage;
     private javax.swing.JLabel DocumentPage;
+    private javax.swing.JButton Find;
+    private javax.swing.JPanel Form;
     private javax.swing.JLabel HomePage;
     private javax.swing.JLabel LogoutPage;
     private javax.swing.JLabel OfficialPage;
+    private javax.swing.JPanel Photo;
     private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
+    private javax.swing.JTextField admin;
+    private javax.swing.JComboBox<String> civilStatus;
     private javax.swing.JPanel database;
+    private javax.swing.JFormattedTextField date;
     private javax.swing.JPanel documents;
+    private javax.swing.JTextField emailAddress;
+    private javax.swing.JTextField end;
+    private javax.swing.JTextField fileName1x1;
+    private javax.swing.JTextField fileNameSignature;
+    private javax.swing.JTextField firstName;
+    private javax.swing.JTextField gender;
+    private javax.swing.JTextField height;
     private javax.swing.JPanel home;
+    private javax.swing.JTextField idField;
+    private javax.swing.JLabel imageSignature;
+    private javax.swing.JLabel img1x1;
+    private javax.swing.JButton insert;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField lastName;
     private javax.swing.JPanel logout;
+    private javax.swing.JTextField lotNum;
     private javax.swing.JPanel main;
+    private javax.swing.JTextField middleName;
+    private javax.swing.JTextField mobile;
+    private javax.swing.JTextField nationality;
+    private javax.swing.JTextField occupation;
     private javax.swing.JPanel officials;
+    private javax.swing.JTextField password;
+    private javax.swing.JTextField philHealth;
+    private javax.swing.JTextField position;
+    private javax.swing.JTextField posstat;
+    private javax.swing.JTextField religion;
     private javax.swing.JPanel reports;
+    private javax.swing.JComboBox<String> sexBox;
+    private javax.swing.JTextField sss;
+    private javax.swing.JTextField start;
+    private javax.swing.JComboBox<String> status;
+    private javax.swing.JTextField street;
+    private javax.swing.JTextField suffix;
+    private javax.swing.JTextField telephone;
+    private javax.swing.JTextField tin;
+    private javax.swing.JButton uploadPicture;
+    private javax.swing.JButton uploadSignature;
+    private javax.swing.JTextField username;
+    private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
-}
+
+

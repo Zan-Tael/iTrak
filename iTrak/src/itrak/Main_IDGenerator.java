@@ -39,9 +39,9 @@ import javax.swing.JLabel;
  */
 public class Main_IDGenerator extends javax.swing.JFrame {
     static final String USER = "system"; //Database Username
-    static final String PASS = "Admin123"; //Your Account Password
-    static final String DATABASE = "ztt"; //Database Name
-    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
@@ -458,7 +458,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
             Statement st = con.createStatement();
 
-            String sql = "SELECT * FROM mockdatabaseforitrak ORDER BY id ASC";
+            String sql = "SELECT * FROM BRGYOFFICIALS_DB ORDER BY id ASC";
             ResultSet rs = st.executeQuery(sql);
 
             DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
@@ -469,7 +469,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 String lastname = rs.getString("LASTNAME");
                 String firstname = rs.getString("FIRSTNAME");
                 String middlename = rs.getString("MIDDLENAME");
-                String suffix  = rs.getString("SUFFIX");
+                String suffix  = rs.getString("SUFFIXNAME");
                 String sex = rs.getString("SEX");
                 String gender = rs.getString("GENDER");
                 String birthdate = rs.getString("BIRTHDATE");
@@ -496,7 +496,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
             Statement st = con.createStatement();
 
-            String sql = "SELECT * FROM mockdatabaseforitrak ORDER BY id ASC";
+            String sql = "SELECT * BRGYOFFICIALS_DB ORDER BY id ASC";
             ResultSet rs = st.executeQuery(sql);
 
             DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
@@ -507,7 +507,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
                 String lastname = rs.getString("LASTNAME");
                 String firstname = rs.getString("FIRSTNAME");
                 String middlename = rs.getString("MIDDLENAME");
-                String suffix  = rs.getString("SUFFIX");
+                String suffix  = rs.getString("SUFFIXNAME");
                 String sex = rs.getString("SEX");
                 String gender = rs.getString("GENDER");
                 String birthdate = rs.getString("BIRTHDATE");
@@ -551,7 +551,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
             Statement st = con.createStatement();
-            String sql = "SELECT * FROM mockdatabaseforitrak WHERE id =" + id.getText();
+            String sql = "SELECT * FROM BRGYOFFICIALS_DB WHERE id =" + id.getText();
             ResultSet rs = st.executeQuery(sql);
 
             g2d.setColor(Color.black);

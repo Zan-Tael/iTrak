@@ -42,10 +42,10 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
      * Creates new form JFrameForm
      */
    
-   static final String USER = "SYSTEM"; //Database Username
-    static final String PASS = "HelloWorld1"; //Your Account Password
-    static final String DATABASE = "orcl"; //Database Name
-    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
     
@@ -370,8 +370,8 @@ public class UpdateForm_Resident extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             System.out.println("Connected ka na Oracle database pre");
-            String query = "INSERT INTO MOCKDATABASEFORITRAK "
-            + "(FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIX, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            String query = "INSERT INTO BRGYOFFICIALS_DB "
+            + "(FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
             + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2) "
             + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 

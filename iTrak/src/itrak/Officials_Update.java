@@ -41,6 +41,8 @@ public class Officials_Update extends javax.swing.JFrame {
     static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -747,7 +749,7 @@ public class Officials_Update extends javax.swing.JFrame {
 
         Image getAbsolutePath = null;
         ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(157, 110,Image.SCALE_SMOOTH);
+        Image image = icon.getImage().getScaledInstance(300, 300,Image.SCALE_SMOOTH);
         img1x1.setIcon(icon);
     }//GEN-LAST:event_uploadPictureActionPerformed
 

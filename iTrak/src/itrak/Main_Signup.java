@@ -27,6 +27,13 @@ public class Main_Signup extends javax.swing.JFrame {
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
     
+     /*static final String USER = "system"; //Database Username
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
     
     public Main_Signup() {
         initComponents();
@@ -43,24 +50,22 @@ public class Main_Signup extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        usernameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        passwordField = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        cpasswordField = new javax.swing.JPasswordField();
         jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel8 = new javax.swing.JLabel();
-        usernameField2 = new javax.swing.JTextField();
+        idField = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        passwordField1 = new javax.swing.JPasswordField();
+        usernameField = new javax.swing.JPasswordField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        passwordField2 = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        signUp = new javax.swing.JToggleButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,68 +74,50 @@ public class Main_Signup extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(61, 178, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 52)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Sign Up");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-
-        usernameField.setBorder(null);
-        usernameField.setOpaque(false);
-        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 130, 20));
-        usernameField.getAccessibleContext().setAccessibleName("");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 230, 140));
 
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Confirm:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 90, 20));
 
-        passwordField.setBorder(null);
-        passwordField.setOpaque(false);
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
+        cpasswordField.setBorder(null);
+        cpasswordField.setOpaque(false);
+        cpasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
+                cpasswordFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, 20));
-
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel4.setText("First Name:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 90, 20));
+        jPanel1.add(cpasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 130, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(61, 178, 255));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 130, 10));
 
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator4.setForeground(new java.awt.Color(61, 178, 255));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 130, 10));
-
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel8.setText("Last Name:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 80, 20));
-
-        usernameField2.setBorder(null);
-        usernameField2.setOpaque(false);
-        jPanel1.add(usernameField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 130, 20));
+        idField.setBorder(null);
+        idField.setOpaque(false);
+        jPanel1.add(idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 40, 20));
 
         jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator6.setForeground(new java.awt.Color(61, 178, 255));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 130, 10));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 40, 10));
 
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel11.setText("Username:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 20));
 
-        passwordField1.setBorder(null);
-        passwordField1.setOpaque(false);
-        passwordField1.addActionListener(new java.awt.event.ActionListener() {
+        usernameField.setBorder(null);
+        usernameField.setOpaque(false);
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordField1ActionPerformed(evt);
+                usernameFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 130, 20));
+        jPanel1.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 130, 20));
 
         jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator9.setForeground(new java.awt.Color(61, 178, 255));
@@ -141,14 +128,14 @@ public class Main_Signup extends javax.swing.JFrame {
         jLabel9.setText("Password:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 20));
 
-        passwordField2.setBorder(null);
-        passwordField2.setOpaque(false);
-        passwordField2.addActionListener(new java.awt.event.ActionListener() {
+        passwordField.setBorder(null);
+        passwordField.setOpaque(false);
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordField2ActionPerformed(evt);
+                passwordFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 130, 20));
+        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 130, 20));
 
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator7.setForeground(new java.awt.Color(61, 178, 255));
@@ -169,6 +156,19 @@ public class Main_Signup extends javax.swing.JFrame {
         jLabel1.setText("Sign-in.");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 40, 20));
 
+        signUp.setText("SIGN UP");
+        signUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(signUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("ID:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 30, 20));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 500));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bg_signup.png"))); // NOI18N
@@ -178,17 +178,74 @@ public class Main_Signup extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cpasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpasswordFieldActionPerformed
+
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldActionPerformed
+
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
+    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordField1ActionPerformed
+          if(usernameField.getText().isEmpty() && passwordField.getText().isEmpty()){
+        
+        System.out.println("Please type your username and password!");}
+                   
+        else{ 
+                try{
+                            //Create Connection to ORACLE DB SERVER
+                            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                                String sql = "SELECT ID  from BRGYOFFICIALS_DB where ID = ? ";  System.out.print("problem 1: Query mali mo ");
+                                PreparedStatement ps = conn.prepareStatement(sql);
+                                
+                                ps.setString(1, idField.getText());
+                                String idFieldVal = idField.getText();
+                                Integer idVal = Integer.parseInt(idFieldVal);
 
-    private void passwordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordField2ActionPerformed
+                                //'ResultSet' - a table of data representing a database result set
+                                ResultSet rs = ps.executeQuery();
+                                rs.next();
+                                     
+                                        if(idVal == rs.getInt("ID")){
+                                            String query = "UPDATE BRGYOFFICIALS_DB SET USERNAME = ?, PASSWORD = ?, ADMIN = 'T' ";
+                                            PreparedStatement stmnt = conn.prepareStatement(query);
+                                            stmnt.setString(1, usernameField.getText());
+                                            stmnt.setString(2, passwordField.getText());
+                                            
+                                                if(passwordField.getText() != cpasswordField.getText()){
+                                                    System.out.println("Make sure both passwords are the same");
+                                                }
+
+                                                else {
+                                                    stmnt.execute();
+                                                    conn.close();
+                                                    System.out.println("Tama ka na pre");
+                                                }
+                                                
+                                        }
+
+                                 else{
+                                       System.out.println("Invalid account,please try again!");
+                                        }
+
+                                    //Close the connection
+                                    conn.close();                          
+                    
+                    }
+                
+                catch(Exception se){
+                    System.out.println("may mali nanaman pre");
+                    System.out.println(se); 
+                } 
+            }
+    
+        
+    }//GEN-LAST:event_signUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,6 +283,8 @@ public class Main_Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField cpasswordField;
+    private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel16;
@@ -234,18 +293,14 @@ public class Main_Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JPasswordField passwordField;
-    private javax.swing.JPasswordField passwordField1;
-    private javax.swing.JPasswordField passwordField2;
-    private javax.swing.JTextField usernameField;
-    private javax.swing.JTextField usernameField2;
+    private javax.swing.JToggleButton signUp;
+    private javax.swing.JPasswordField usernameField;
     // End of variables declaration//GEN-END:variables
 }

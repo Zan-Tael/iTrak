@@ -25,6 +25,13 @@ public class Main_Login extends javax.swing.JFrame {
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
     
+     /*static final String USER = "system"; //Database Username
+    static final String PASS = "pdbtip12345"; //Your Account Password
+    static final String DATABASE = "cdb"; //Database Name
+    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
     
     public Main_Login() {
         initComponents();
@@ -48,8 +55,8 @@ public class Main_Login extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        signIn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,16 +102,17 @@ public class Main_Login extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(61, 178, 255));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 160, 10));
 
-        jLabel7.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Sign In");
-        jLabel7.setOpaque(true);
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 30));
-
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel16.setText("Sign In");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        signIn.setText("SIGN IN");
+        signIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signInActionPerformed(evt);
+            }
+        });
+        jPanel1.add(signIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 110, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 500));
 
@@ -118,6 +126,54 @@ public class Main_Login extends javax.swing.JFrame {
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
+
+    private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
+        // TODO add your handling code here:
+           
+    if(usernameField.getText().isEmpty() && passwordField.getText().isEmpty()){
+        
+        jOptionPane1.showMessageDialog(null, "Please type your username and password!");}
+                   
+        else{ 
+                try{
+                            //Create Connection to ORACLE DB SERVER
+                            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                                String username = usernameField.getText();
+                                String password = passwordField.getText();
+                                String sql = "SELECT COUNT(*) from BRGYOFFICIALS_DB where USERNAME = ? AND PASSWORD = ? ";  System.out.print("problem 1: Query mali mo ");
+                                PreparedStatement ps = conn.prepareStatement(sql);
+                                
+                                ps.setString(1, username);
+                                ps.setString(2, password);
+
+                                //'ResultSet' - a table of data representing a database result set
+                                ResultSet rs = ps.executeQuery();
+                                rs.next();
+                                    
+                                int count = rs.getInt(1);
+                                        if(count > 0){
+                                            jOptionPane1.showMessageDialog(null, "Login Success!");
+                                            System.out.println ("User "+username+" has successfully logged in!" );
+                                            this.dispose();
+                                            new Main_Dashboard().setVisible(true);
+                                        }
+
+                                 else{
+                                       jOptionPane1.showMessageDialog(null, "Invalid account,please try again!");
+                                        }
+
+                                    //Close the connection
+                                    conn.close();                          
+                    
+                    }
+                
+                catch(Exception se){
+                    System.out.println("may mali nanaman pre");
+                    System.out.println(se); 
+                } 
+            }
+    
+    }//GEN-LAST:event_signInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +217,11 @@ public class Main_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPasswordField passwordField;
+    private javax.swing.JButton signIn;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 

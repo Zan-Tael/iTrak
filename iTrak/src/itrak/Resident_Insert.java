@@ -35,12 +35,20 @@ public class Resident_Insert extends javax.swing.JFrame {
      */
     
      
-    static final String USER = "system"; //Database Username
+       static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;
+    
+     /*static final String USER = "system"; //Database Username
     static final String PASS = "pdbtip12345"; //Your Account Password
     static final String DATABASE = "cdb"; //Database Name
     static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
     public Resident_Insert() {
         initComponents();
     }
@@ -680,9 +688,10 @@ public class Resident_Insert extends javax.swing.JFrame {
      String filename = f.getAbsolutePath();
      fileName1x1.setText(filename);
      
+     
      Image getAbsolutePath = null;
      ImageIcon icon = new ImageIcon(filename);
-     Image image = icon.getImage().getScaledInstance(157, 110,Image.SCALE_SMOOTH);
+     Image image = icon.getImage().getScaledInstance(166, 166,Image.SCALE_SMOOTH);
      img1x1.setIcon(icon);
         
     }//GEN-LAST:event_uploadPictureActionPerformed

@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.Color;
+import org.imgscalr.Scalr;
 /**
  *
  * @author ZAEL
@@ -33,12 +34,20 @@ public class Officials_DataManager extends javax.swing.JFrame {
     }
     
      
-    static final String USER = "system"; //Database Username
+       static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;
+    
+    /*static final String USER = "system"; //Database Username
     static final String PASS = "pdbtip12345"; //Your Account Password
     static final String DATABASE = "cdb"; //Database Name
     static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
     public void Update(){
        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -514,7 +523,7 @@ public class Officials_DataManager extends javax.swing.JFrame {
         DataOutput.add(mobileField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 140, -1));
 
         tellyField.setEditable(false);
-        tellyField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tellyField.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         tellyField.setBorder(null);
         tellyField.setOpaque(false);
         DataOutput.add(tellyField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 140, -1));
@@ -525,19 +534,19 @@ public class Officials_DataManager extends javax.swing.JFrame {
         DataOutput.add(lblID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 50, -1));
 
         genderField.setEditable(false);
-        genderField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        genderField.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         genderField.setBorder(null);
         genderField.setOpaque(false);
         DataOutput.add(genderField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 50, -1));
 
         sexField.setEditable(false);
-        sexField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        sexField.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         sexField.setBorder(null);
         sexField.setOpaque(false);
         DataOutput.add(sexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 50, -1));
 
         emailField.setEditable(false);
-        emailField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        emailField.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         emailField.setBorder(null);
         emailField.setOpaque(false);
         DataOutput.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 140, -1));
@@ -553,7 +562,7 @@ public class Officials_DataManager extends javax.swing.JFrame {
         DataOutput.add(lblID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 30, -1));
 
         statusField.setEditable(false);
-        statusField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        statusField.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         statusField.setBorder(null);
         statusField.setOpaque(false);
         DataOutput.add(statusField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 110, -1));
@@ -716,32 +725,38 @@ public class Officials_DataManager extends javax.swing.JFrame {
             DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
 
             int selectRow = jTable1.getSelectedRow();
-            Object middle = tblModel.getValueAt(selectRow,4);
-            Object suffix = tblModel.getValueAt(selectRow,5);
+            Object middle = tblModel.getValueAt(selectRow,3);
+            Object suffix = tblModel.getValueAt(selectRow,4);
             while(result.next()){
+
                 txtID.setText(tblModel.getValueAt(selectRow,0).toString());
                 /* conditions if yung middle name or suffic is empty */
-                if (middle == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString());
-                }
+                    if (middle == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1) +" " + tblModel.getValueAt(selectRow,4).toString());
+                    }
 
-                else if(suffix == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,5).toString());
-                }
+                    else if(suffix == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3).toString() + " " + tblModel.getValueAt(selectRow,1).toString());
+                    }
 
-                else if (middle == null && suffix == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
-                }
-                else{
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
-                }
+                    else if (middle == null & suffix == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
+                    }
+                    else{
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
+                    }
+                
                 addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
                 mobileField.setText(result.getString("MobileNumber"));
                 tellyField.setText(result.getString("TelephoneNumber"));
-
+                sexField.setText(result.getString("Sex"));
+                genderField.setText(result.getString("Gender"));
+                statusField.setText(result.getString("Status"));
+                
                 byte[] image1x1 = result.getBytes("Image1");
                 BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                ImageIcon iconimage = new ImageIcon(Img1x1);
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+                ImageIcon iconimage = new ImageIcon(Img1x1Final);
                 lblIcon.setIcon(iconimage);
             }
             conn.close();

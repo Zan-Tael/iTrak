@@ -40,12 +40,20 @@ import org.imgscalr.Scalr;
  * @author ZAEL
  */
 public class Main_IDGenerator extends javax.swing.JFrame {
-    static final String USER = "system"; //Database Username
+    
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
     static final String PASS = "Admin123"; //Your Account Password
     static final String DATABASE = "ztt"; //Database Name
     static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
     
     /**
      * Creates new form Main_IDGenerator
@@ -526,25 +534,27 @@ public class Main_IDGenerator extends javax.swing.JFrame {
             DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
 
             int selectRow = jTable2.getSelectedRow();
-            Object middle = tblModel.getValueAt(selectRow,4);
-            Object suffix = tblModel.getValueAt(selectRow,5);
+            Object middle = tblModel.getValueAt(selectRow,3);
+            Object suffix = tblModel.getValueAt(selectRow,4);
             while(result.next()){
                 txtID.setText(tblModel.getValueAt(selectRow,0).toString());
                 /* conditions if yung middle name or suffic is empty */
-                if (middle == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString());
-                }
+                 if (middle == null & suffix == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
+                    }
 
-                else if(suffix == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,5).toString());
-                }
+                   else if (middle == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1) +" " + tblModel.getValueAt(selectRow,4).toString());
+                    }
 
-                else if (middle == null && suffix == null){
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
-                }
-                else{
-                    nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
-                }
+                    else if(suffix == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3).toString() + " " + tblModel.getValueAt(selectRow,1).toString());
+                    }
+
+                    else{
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
+                    }
+                 
                 addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
                 mobileField.setText(result.getString("MobileNumber"));
                 tellyField.setText(result.getString("TelephoneNumber"));
@@ -671,7 +681,7 @@ public class Main_IDGenerator extends javax.swing.JFrame {
 
                 byte[] image1x1 = rs.getBytes("Image1");
                 BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth(), Img1x1.getHeight());
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
 
                 /*^^^^ Picture for 1x1 Image ^^^*/
 
@@ -692,8 +702,10 @@ public class Main_IDGenerator extends javax.swing.JFrame {
         // Save as JPEG
         File file = new File(nameField.getText()+" ID Sample.jpg");
         ImageIO.write(bufferedImage, "jpg", file);
+        ImageIcon idPreview = new ImageIcon(bufferedImage, "jpg");
         
         JOptionPane.showMessageDialog(this,"ID Generated Succesfully");
+        JOptionPane.showMessageDialog(this," ", "Display Image", JOptionPane.INFORMATION_MESSAGE, idPreview);
             
             
            

@@ -30,13 +30,20 @@ import org.jfree.data.jdbc.JDBCPieDataset;
  * @author ZAEL
  */
 public class Main_Reports extends javax.swing.JFrame {
-    static final String USER = "system"; //Database Username
+     
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
     static final String PASS = "Admin123"; //Your Account Password
     static final String DATABASE = "ztt"; //Database Name
     static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
-
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
     /**
      * Creates new form Main_Reports
      */

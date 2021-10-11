@@ -26,6 +26,21 @@ import org.imgscalr.Scalr;
  * @author ZAEL
  */
 public class Officials_Update extends javax.swing.JFrame {
+    
+        
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
 
     /**
      * Creates new form Officials_Update
@@ -33,12 +48,7 @@ public class Officials_Update extends javax.swing.JFrame {
     public Officials_Update() {
         initComponents();
     }
-    static final String USER = "system"; //Database Username
-    static final String PASS = "Admin123"; //Your Account Password
-    static final String DATABASE = "ztt"; //Database Name
-    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
-    static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
+      
     
     
     /**
@@ -138,7 +148,7 @@ public class Officials_Update extends javax.swing.JFrame {
         weight = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         idField = new javax.swing.JTextField();
-        Find = new javax.swing.JButton();
+        findID = new javax.swing.JButton();
         username = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -154,10 +164,15 @@ public class Officials_Update extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         admin = new javax.swing.JTextField();
         insert = new javax.swing.JButton();
+        fNameField = new javax.swing.JTextField();
+        lNameField = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        findName = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Officials: Update");
-        setMinimumSize(new java.awt.Dimension(0, 0));
         setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
@@ -593,17 +608,17 @@ public class Officials_Update extends javax.swing.JFrame {
         Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
         Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 70, -1));
 
-        jLabel35.setText("INSERT ID:");
-        Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 60, 20));
-        Form.add(idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 40, -1));
+        jLabel35.setText("ID:");
+        Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 30, 20));
+        Form.add(idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 30, -1));
 
-        Find.setText("FIND");
-        Find.addActionListener(new java.awt.event.ActionListener() {
+        findID.setText("FIND");
+        findID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FindActionPerformed(evt);
+                findIDActionPerformed(evt);
             }
         });
-        Form.add(Find, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 20, 60, -1));
+        Form.add(findID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 60, -1));
         Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 160, -1));
 
         jLabel37.setText("Username");
@@ -657,8 +672,27 @@ public class Officials_Update extends javax.swing.JFrame {
             }
         });
         Form.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 530, -1));
+        Form.add(fNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 90, -1));
+        Form.add(lNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 90, -1));
 
-        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
+        jLabel43.setText("LAST NAME:");
+        Form.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 70, 20));
+
+        jLabel44.setText("FIRST NAME:");
+        Form.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 70, 20));
+
+        jLabel46.setText("SEARCH USING");
+        Form.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
+
+        findName.setText("FIND");
+        findName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findNameActionPerformed(evt);
+            }
+        });
+        Form.add(findName, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 60, -1));
+
+        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 600, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -823,12 +857,11 @@ public class Officials_Update extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            System.out.println("Connected ka na Oracle database pre");
             String query = "UPDATE BRGYOFFICIALS_DB SET "
             +"FIRSTNAME = ?, MIDDLENAME = ?, LASTNAME = ?, SUFFIXNAME = ?, BIRTHDATE = ?, GENDER = ?, SEX = ?, HOUSENUMBER = ?, STREET = ?, "
             +"CIVILSTATUS = ?, RELIGION = ?, STATUS = ?, NATIONALITY = ?, OCCUPATION = ?, SSS = ?, PHILHEALTH = ?, TIN = ?, TELEPHONENUMBER = ?,"
             +"MOBILENUMBER = ?, HEIGHT = ?, WEIGHT = ?, EMAILADDRESS = ?, IMAGE1 = ?, IMAGE2 = ?, USERNAME = ?, PASSWORD = ?, POSITION = ?,"
-            +"STARTDATE = ?, ENDDATE = ?, POS_STATUS = ?, ADMIN = ? WHERE ID =" + idField.getText();
+            +"STARTDATE = ?, ENDDATE = ?, POS_STATUS = ?, ADMIN = ? WHERE ID = " + idField.getText();
 
             PreparedStatement stmnt = conn.prepareStatement(query);
 
@@ -904,14 +937,14 @@ public class Officials_Update extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_insertActionPerformed
 
-    private void FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindActionPerformed
+    private void findIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findIDActionPerformed
         // TODO add your handling code here:
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Integer idValue = Integer.parseInt(idField.getText());
-            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM BRGYOFFICIALS_DB WHERE ID LIKE '%" + idField.getText() + "%' ");
+            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM BRGYOFFICIALS_DB WHERE ID LIKE '%" + idField.getText() + "%' ");                               
             ResultSet rs = stmnt.executeQuery();
 
             while(rs.next()){
@@ -943,7 +976,146 @@ public class Officials_Update extends javax.swing.JFrame {
                 String positionVal = rs.getString("POSITION");
                 String startVal = rs.getString("STARTDATE");
                 String endVal = rs.getString("ENDDATE");
-                String posstatVal = rs.getString("POSITION_STATUS");
+                String posstatVal = rs.getString("POS_STATUS");
+                String adminVal = rs.getString("ADMIN");
+                        
+          
+          
+
+                firstName.setText(firstnameVal);
+                if(middlenameVal == null){
+                    middleName.setText(" ");
+                }
+                else{
+                    middleName.setText(middlenameVal);
+                }
+
+                lastName.setText(lastnameVal);
+
+                if(suffix == null){
+                    suffix.setText(" ");
+                }
+                else{
+                    suffix.setText(suffixVal);
+                }
+
+                date.setText(birthdateVal);
+                sexBox.setSelectedItem(sexVal);
+                gender.setText(genderVal);
+                lotNum.setText(lotVal);
+                street.setText(streetVal);
+                civilStatus.setSelectedItem(civstatVal);
+                religion.setText(religonVal);
+                nationality.setText(nationVal);
+                status.setSelectedItem(statVal);
+                occupation.setText(occVal);
+                if(sssVal == null){
+                    sss.setText(" ");
+                }
+                else{
+                    sss.setText(sssVal);
+                }
+                if(phealthVal == null){
+                    philHealth.setText(" ");
+                }
+                else{
+                    philHealth.setText(phealthVal);
+                }
+                if(tinVal == null){
+                    tin.setText(" ");
+                }
+                else{
+                    tin.setText(tinVal);
+                }
+
+                telephone.setText(tellyVal);
+                mobile.setText(mobileVal);
+                emailAddress.setText(emailVal);
+                height.setText(heightVal);
+                weight.setText(weightVal);
+                
+                username.setText(usernameVal);
+                   
+                password.setText(passwordVal);
+                position.setText(positionVal); 
+                start.setText(startVal);   
+                end.setText(endVal);   
+                posstat.setText(posstatVal);   
+                admin.setText(adminVal);
+
+                byte[] image1x1 = rs.getBytes("Image1");
+                BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth(), Img1x1.getHeight());
+                ImageIcon iconimage1x1 = new ImageIcon(Img1x1Final);
+                img1x1.setIcon(iconimage1x1);
+
+                byte[] imageSig = rs.getBytes("Image2");
+                BufferedImage ImgSgn = ImageIO.read(new ByteArrayInputStream(imageSig));
+                BufferedImage ImgSgnFinal = Scalr.resize(ImgSgn, Scalr.Method.BALANCED, ImgSgn.getWidth()/2, ImgSgn.getHeight()/2);
+                ImageIcon iconimageSig = new ImageIcon(ImgSgnFinal);
+                imageSignature.setIcon(iconimageSig);
+            }
+
+            conn.close();
+
+        }
+
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_findIDActionPerformed
+
+    private void endActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_endActionPerformed
+
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminActionPerformed
+
+    private void findNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findNameActionPerformed
+        // TODO add your handling code here:
+        
+        /* OR */
+          try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            String firstNameSearch = fNameField.getText();
+            String lastNameSearch = lNameField.getText();
+            PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM BRGYOFFICIALS_DB WHERE FIRSTNAME = '" + firstNameSearch + "' AND LASTNAME = '" + lastNameSearch + "' ");                               
+            ResultSet rs = stmnt.executeQuery();
+
+            while(rs.next()){
+                String lastnameVal = rs.getString("LASTNAME");
+                String firstnameVal = rs.getString("FIRSTNAME");
+                String middlenameVal = rs.getString("MIDDLENAME");
+                String suffixVal  = rs.getString("SUFFIXNAME");
+                String birthdateVal = rs.getString("BIRTHDATE");
+                String sexVal = rs.getString("SEX");
+                String genderVal = rs.getString("GENDER");
+                String lotVal = rs.getString("HOUSENUMBER");
+                String streetVal = rs.getString("STREET");
+                String civstatVal = rs.getString("CIVILSTATUS");
+                String religonVal = rs.getString("RELIGION");
+                String nationVal = rs.getString("NATIONALITY");
+                String statVal = rs.getString("STATUS");
+                String occVal = rs.getString("OCCUPATION");
+                String sssVal = rs.getString("SSS");
+                String phealthVal = rs.getString("PHILHEALTH");
+                String tinVal = rs.getString("TIN");
+                String tellyVal = rs.getString("TELEPHONENUMBER");
+                String mobileVal = rs.getString("MOBILENUMBER");
+                String heightVal = rs.getString("HEIGHT");
+                String weightVal = rs.getString("WEIGHT");
+                String emailVal = rs.getString("EMAILADDRESS");
+                
+                String usernameVal = rs.getString("USERNAME");
+                String passwordVal = rs.getString("PASSWORD");
+                String positionVal = rs.getString("POSITION");
+                String startVal = rs.getString("STARTDATE");
+                String endVal = rs.getString("ENDDATE");
+                String posstatVal = rs.getString("POS_STATUS");
                 String adminVal = rs.getString("ADMIN");
                         
           
@@ -1033,15 +1205,7 @@ public class Officials_Update extends javax.swing.JFrame {
             System.out.println(e);
         }
 
-    }//GEN-LAST:event_FindActionPerformed
-
-    private void endActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_endActionPerformed
-
-    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminActionPerformed
+    }//GEN-LAST:event_findNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1082,7 +1246,6 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JLabel AboutPage;
     private javax.swing.JLabel DatabasePage;
     private javax.swing.JLabel DocumentPage;
-    private javax.swing.JButton Find;
     private javax.swing.JPanel Form;
     private javax.swing.JLabel HomePage;
     private javax.swing.JLabel LogoutPage;
@@ -1098,8 +1261,11 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JPanel documents;
     private javax.swing.JTextField emailAddress;
     private javax.swing.JTextField end;
+    private javax.swing.JTextField fNameField;
     private javax.swing.JTextField fileName1x1;
     private javax.swing.JTextField fileNameSignature;
+    private javax.swing.JButton findID;
+    private javax.swing.JButton findName;
     private javax.swing.JTextField firstName;
     private javax.swing.JTextField gender;
     private javax.swing.JTextField height;
@@ -1145,6 +1311,9 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1156,6 +1325,7 @@ public class Officials_Update extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField lNameField;
     private javax.swing.JTextField lastName;
     private javax.swing.JPanel logout;
     private javax.swing.JTextField lotNum;

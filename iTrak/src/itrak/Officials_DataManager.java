@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package itrak;
+import static itrak.Resident_DataManager.DB_URL;
+import static itrak.Resident_DataManager.PASS;
+import static itrak.Resident_DataManager.USER;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.sql.Connection;
@@ -24,6 +27,21 @@ import org.imgscalr.Scalr;
  */
 public class Officials_DataManager extends javax.swing.JFrame {
 
+        
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
     /**
      * Creates new form Officials_DataManager
      */
@@ -32,12 +50,8 @@ public class Officials_DataManager extends javax.swing.JFrame {
         Refresh();
         
     }
-    static final String USER = "system"; //Database Username
-    static final String PASS = "Admin123"; //Your Account Password
-    static final String DATABASE = "ztt"; //Database Name
-    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
-    static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
+    
+    
     public void Update(){
        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -107,6 +121,13 @@ public class Officials_DataManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrameDel = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jFrameTrueDelete = new javax.swing.JFrame();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         main = new javax.swing.JPanel();
         SideBar = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
@@ -154,6 +175,85 @@ public class Officials_DataManager extends javax.swing.JFrame {
         lblID3 = new javax.swing.JLabel();
         statusField = new javax.swing.JTextField();
         lblID4 = new javax.swing.JLabel();
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ARE YOU SURE YOU WANT TO DELETE SELECTED ROW?");
+
+        jButton1.setText("NO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("YES");
+        jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrameDelLayout = new javax.swing.GroupLayout(jFrameDel.getContentPane());
+        jFrameDel.getContentPane().setLayout(jFrameDelLayout);
+        jFrameDelLayout.setHorizontalGroup(
+            jFrameDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameDelLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                .addGap(47, 47, 47))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameDelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
+        );
+        jFrameDelLayout.setVerticalGroup(
+            jFrameDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameDelLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jFrameDelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SUCCESSFULLY DELETED!");
+
+        jButton3.setText("DONE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrameTrueDeleteLayout = new javax.swing.GroupLayout(jFrameTrueDelete.getContentPane());
+        jFrameTrueDelete.getContentPane().setLayout(jFrameTrueDeleteLayout);
+        jFrameTrueDeleteLayout.setHorizontalGroup(
+            jFrameTrueDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameTrueDeleteLayout.createSequentialGroup()
+                .addGroup(jFrameTrueDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrameTrueDeleteLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jFrameTrueDeleteLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jFrameTrueDeleteLayout.setVerticalGroup(
+            jFrameTrueDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameTrueDeleteLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Officials: Data Manager");
@@ -696,11 +796,6 @@ public class Officials_DataManager extends javax.swing.JFrame {
     private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
         // TODO add your handling code here:
 
-        char c = evt.getKeyChar();
-
-        if(!Character.isDigit(c)){
-            evt.consume();
-        }
     }//GEN-LAST:event_txtIDKeyTyped
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
@@ -750,7 +845,7 @@ public class Officials_DataManager extends javax.swing.JFrame {
                         nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
                     }
 
-                    if (middle == null){
+                   else if (middle == null){
                         nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1) +" " + tblModel.getValueAt(selectRow,4).toString());
                     }
 
@@ -842,6 +937,75 @@ public class Officials_DataManager extends javax.swing.JFrame {
         new Officials_Insert().setVisible(true);
     }//GEN-LAST:event_btnInsertActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jFrameDel.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            String modelRow = (String) jTable1.getValueAt(selectedRow, 0);
+            
+
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            String query = "INSERT INTO BRGYOFFICIALS_DB_DEL (ID, FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2, "
+            + "USERNAME, PASSWORD, POSITION, STARTDATE, ENDDATE, POS_STATUS, ADMIN) "
+            + "SELECT ID, FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2, "
+            + "USERNAME, PASSWORD, POSITION, STARTDATE, ENDDATE, POS_STATUS, ADMIN FROM BRGYOFFICIALS_DB WHERE ID = ?";
+            
+            java.sql.PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1, modelRow);
+
+            stmt.executeUpdate();
+
+            con.close();
+        }
+
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+        
+        jFrameDel.dispose();
+        jFrameTrueDelete.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+         DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+        
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            String modelRow = (String) jTable1.getValueAt(selectedRow, 0);
+            tblModel.removeRow((int) selectedRow);
+
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            String query = "DELETE FROM BRGYOFFICIALS_DB WHERE ID = ?";
+            java.sql.PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1, modelRow);
+
+            stmt.executeUpdate();
+
+            con.close();
+        }
+
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+        
+        jFrameTrueDelete.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -899,11 +1063,18 @@ public class Officials_DataManager extends javax.swing.JFrame {
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField genderField;
     private javax.swing.JPanel home;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JFrame jFrameDel;
+    private javax.swing.JFrame jFrameTrueDelete;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;

@@ -21,12 +21,20 @@ import org.imgscalr.Scalr;
 
 public class Resident_DataManager extends javax.swing.JFrame {
 
-    static final String USER = "system"; //Database Username
+    
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
     static final String PASS = "Admin123"; //Your Account Password
     static final String DATABASE = "ztt"; //Database Name
     static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;     
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */  
     
     public Resident_DataManager() {
         initComponents();
@@ -96,6 +104,13 @@ public class Resident_DataManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrameDel = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jFrameTrueDelete = new javax.swing.JFrame();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         main = new javax.swing.JPanel();
         btnInsert = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -143,6 +158,42 @@ public class Resident_DataManager extends javax.swing.JFrame {
         lblID3 = new javax.swing.JLabel();
         statusField = new javax.swing.JTextField();
         lblID4 = new javax.swing.JLabel();
+
+        jFrameDel.setBounds(new java.awt.Rectangle(0, 0, 377, 170));
+        jFrameDel.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("ARE YOU SURE YOU WANT TO DELETE SELECTED ROW?");
+        jFrameDel.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 37, 285, 30));
+
+        jButton1.setText("NO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jFrameDel.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 85, 75, -1));
+
+        jButton2.setText("YES");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jFrameDel.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 85, 65, -1));
+
+        jFrameTrueDelete.setBounds(new java.awt.Rectangle(0, 0, 280, 200));
+        jFrameTrueDelete.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("SUCCESSFULLY DELETED!");
+        jFrameTrueDelete.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 27, 132, 39));
+
+        jButton3.setText("DONE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jFrameTrueDelete.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resident: Data Manager");
@@ -614,28 +665,9 @@ public class Resident_DataManager extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-
-        try {
-            int selectedRow = jTable1.getSelectedRow();
-            String modelRow = (String) jTable1.getValueAt(selectedRow, 0);
-            tblModel.removeRow((int) selectedRow);
-
-            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            String query = "DELETE FROM residents_db WHERE id = ?";
-            java.sql.PreparedStatement prepstmt = con.prepareStatement(query);
-
-            prepstmt.setString(1, modelRow);
-
-            prepstmt.executeUpdate();
-
-            con.close();
-        }
-
-        catch (Exception ex) {
-            System.err.println(ex);
-        }
+        
+        jFrameDel.setVisible(true);
+ 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -660,7 +692,43 @@ public class Resident_DataManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+    try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
+            Statement st = con.createStatement();
+
+            String sql = "SELECT * FROM residents_db ORDER BY id ASC";
+            ResultSet rs = st.executeQuery(sql);
+
+            DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+            tblModel.setRowCount(0);
+            
+            while(rs.next()){
+                String id = String.valueOf(rs.getInt("ID"));
+                String lastname = rs.getString("LASTNAME");
+                String firstname = rs.getString("FIRSTNAME");
+                String middlename = rs.getString("MIDDLENAME");
+                String suffix  = rs.getString("SUFFIXNAME");
+                String sex = rs.getString("SEX");
+                String gender = rs.getString("GENDER");
+                String birthdate = rs.getString("BIRTHDATE");
+               // String telly = rs.getString("TELEPHONENUMBER");
+                //String mobile = rs.getString("MOBILENUMBER");
+                //String email = rs.getString("EMAILADDRESS");
+                //String status = rs.getString("STATUS");
+
+                String tbData[] = {id, lastname, firstname, middlename, suffix, sex, gender, birthdate};
+
+                tblModel.addRow(tbData);
+            }
+            con.close();
+        }
+
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -681,7 +749,11 @@ public class Resident_DataManager extends javax.swing.JFrame {
 
                 txtID.setText(tblModel.getValueAt(selectRow,0).toString());
                 /* conditions if yung middle name or suffic is empty */
-                    if (middle == null){
+                   if (middle == null & suffix == null){
+                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
+                    }
+
+                   else if (middle == null){
                         nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1) +" " + tblModel.getValueAt(selectRow,4).toString());
                     }
 
@@ -689,12 +761,10 @@ public class Resident_DataManager extends javax.swing.JFrame {
                         nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3).toString() + " " + tblModel.getValueAt(selectRow,1).toString());
                     }
 
-                    else if (middle == null & suffix == null){
-                        nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,1).toString());
-                    }
                     else{
                         nameField.setText(tblModel.getValueAt(selectRow,2) + " " + tblModel.getValueAt(selectRow,3) +" " + tblModel.getValueAt(selectRow,1).toString() + " " + tblModel.getValueAt(selectRow,4));
                     }
+                
                 
                 addressField.setText(result.getString("HouseNumber") + ", " + result.getString("Street") + " St, Brgy. Liwanag, Mexico City");
                 mobileField.setText(result.getString("MobileNumber"));
@@ -845,6 +915,74 @@ public class Resident_DataManager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtIDKeyTyped
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        jFrameDel.dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+               
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            String modelRow = (String) jTable1.getValueAt(selectedRow, 0);
+            
+
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            String query = "INSERT INTO residents_db_del (ID, FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2) "
+            + "SELECT ID, FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIXNAME, BIRTHDATE, GENDER, SEX, HOUSENUMBER, STREET, CIVILSTATUS, RELIGION, "
+            + "STATUS, NATIONALITY, OCCUPATION, SSS, PHILHEALTH, TIN, TELEPHONENUMBER, MOBILENUMBER, HEIGHT, WEIGHT, EMAILADDRESS, IMAGE1, IMAGE2 FROM residents_db WHERE ID = ?";
+            
+            java.sql.PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1, modelRow);
+
+            stmt.executeUpdate();
+
+            con.close();
+        }
+
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+        
+        jFrameDel.dispose();
+        jFrameTrueDelete.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+        
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            String modelRow = (String) jTable1.getValueAt(selectedRow, 0);
+            tblModel.removeRow((int) selectedRow);
+
+            Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            String query = "DELETE FROM RESIDENTS_DB WHERE ID = ?";
+            java.sql.PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1, modelRow);
+
+            stmt.executeUpdate();
+
+            con.close();
+        }
+
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+        
+        jFrameTrueDelete.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -902,11 +1040,18 @@ public class Resident_DataManager extends javax.swing.JFrame {
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField genderField;
     private javax.swing.JPanel home;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JFrame jFrameDel;
+    private javax.swing.JFrame jFrameTrueDelete;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;

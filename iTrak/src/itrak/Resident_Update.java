@@ -35,15 +35,26 @@ import org.imgscalr.Scalr;
 
 public class Resident_Update extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JFrameForm
-     */
-    static final String USER = "system"; //Database Username
+        
+    static final String USER = "SYSTEM"; //Database Username
+    static final String PASS = "HelloWorld1"; //Your Account Password
+    static final String DATABASE = "orcl"; //Database Name
+    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PORT = "1521";
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    
+    /*static final String USER = "system"; //Database Username
     static final String PASS = "Admin123"; //Your Account Password
     static final String DATABASE = "ztt"; //Database Name
     static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    
+    
+    /**
+     * Creates new form JFrameForm
+     */
+    
     
      /*static final String USER = "system"; //Database Username
     static final String PASS = "pdbtip12345"; //Your Account Password
@@ -690,7 +701,6 @@ public class Resident_Update extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            System.out.println("Connected ka na Oracle database pre");
             String query = "UPDATE residents_db SET "
             +"FIRSTNAME = ?, MIDDLENAME = ?, LASTNAME = ?, SUFFIXNAME = ?, BIRTHDATE = ?, GENDER = ?, SEX = ?, HOUSENUMBER = ?, STREET = ?, "
             +"CIVILSTATUS = ?, RELIGION = ?, STATUS = ?, NATIONALITY = ?, OCCUPATION = ?, SSS = ?, PHILHEALTH = ?, TIN = ?, TELEPHONENUMBER = ?,"

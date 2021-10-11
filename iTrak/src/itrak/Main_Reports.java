@@ -43,8 +43,7 @@ public class Main_Reports extends javax.swing.JFrame {
      */
     public Main_Reports() {
         initComponents();
-        showPieChart();
-        showBarChart();
+        statementsForChart();
     }
 
     /**
@@ -79,8 +78,13 @@ public class Main_Reports extends javax.swing.JFrame {
         logout = new javax.swing.JPanel();
         LogoutPage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        pieChartPanel = new javax.swing.JPanel();
-        barChartPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        maleField = new javax.swing.JTextField();
+        femaleField = new javax.swing.JTextField();
+        bothField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -294,12 +298,25 @@ public class Main_Reports extends javax.swing.JFrame {
 
         main.add(SideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 700));
 
-        pieChartPanel.setLayout(new java.awt.BorderLayout());
-        main.add(pieChartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 470, 230));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/reports male.png"))); // NOI18N
+        main.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
 
-        barChartPanel.setPreferredSize(new java.awt.Dimension(470, 230));
-        barChartPanel.setLayout(new java.awt.BorderLayout());
-        main.add(barChartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 470, 210));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/reports female.png"))); // NOI18N
+        main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/reports both.png"))); // NOI18N
+        main.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, -1, -1));
+        main.add(maleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 80, -1));
+        main.add(femaleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 80, -1));
+        main.add(bothField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 80, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,71 +333,10 @@ public class Main_Reports extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    public void showPieChart(){
-        try{
-                //create dataset
-                ;
-            
-              DefaultPieDataset pieDataset = new DefaultPieDataset( );
-              pieDataset.setValue( "iPhone5s" , new Double( 20 ) );  
-              pieDataset.setValue( "Samsung Universe" , new Double( 20 ) );   
-              pieDataset.setValue( "MotoG" , new Double( 40 ) );    
-              pieDataset.setValue( "Nokia Lumia" , new Double( 10 ) );  
-
-              //create chart
-               JFreeChart piechart = ChartFactory.createPieChart("mobile sales",pieDataset, false,true,false);//explain
-
-                PiePlot piePlot = (PiePlot) piechart.getPlot();
-
-               //changing pie chart blocks colors
-               piePlot.setSectionPaint( "iPhone 5s" , new Color(255,255,102));
-                piePlot.setSectionPaint("Samsung Universe", new Color(102,255,102));
-                piePlot.setSectionPaint("MotoG", new Color(255,102,153));
-                piePlot.setSectionPaint("Nokia Lumia", new Color(0,204,204));
-
-
-                piePlot.setBackgroundPaint(Color.white);
-
-                //create chartPanel to display chart(graph)
-                ChartPanel PieChart = new ChartPanel(piechart);
-                pieChartPanel.removeAll();
-                pieChartPanel.add(PieChart, BorderLayout.CENTER);
-                pieChartPanel.validate();
-        }
-        
-        catch(Exception e){
-        
-        }
-        
+    public void statementsForChart(){
+     
     }
-    
-     public void showBarChart(){
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.setValue(200, "Amount", "january");
-        dataset.setValue(150, "Amount", "february");
-        dataset.setValue(18, "Amount", "march");
-        dataset.setValue(100, "Amount", "april");
-        dataset.setValue(80, "Amount", "may");
-        dataset.setValue(250, "Amount", "june");
-        
-        JFreeChart chart = ChartFactory.createBarChart("contribution","monthly","amount", 
-                dataset, PlotOrientation.VERTICAL, false,true,false);
-        
-        CategoryPlot categoryPlot = chart.getCategoryPlot();
-        //categoryPlot.setRangeGridlinePaint(Color.BLUE);
-        categoryPlot.setBackgroundPaint(Color.WHITE);
-        BarRenderer renderer = (BarRenderer) categoryPlot.getRenderer();
-        Color clr3 = new Color(204,0,51);
-        renderer.setSeriesPaint(0, clr3);
-        
-        ChartPanel barChart = new ChartPanel(chart);
-        barChartPanel.removeAll();
-        barChartPanel.add(barChart, BorderLayout.CENTER);
-        barChartPanel.validate();
-        
-        
-    }
+  
     
     
     
@@ -474,6 +430,55 @@ public class Main_Reports extends javax.swing.JFrame {
         logout.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_LogoutPageMouseExited
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+           try{
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            String maleQuery = "SELECT COUNT(*) FROM RESIDENTS_DB WHERE SEX = 'M' "; 
+            PreparedStatement stmntMale = conn.prepareStatement(maleQuery);
+            ResultSet rsMale = stmntMale.executeQuery();
+            
+            Integer MalePop = rsMale.getInt(1);
+            String MaleVal = Integer.toString(MalePop);
+            
+            String femaleQuery = "SELECT COUNT(*) FROM RESIDENTS_DB WHERE SEX = 'F' "; 
+            PreparedStatement stmntFemale = conn.prepareStatement(femaleQuery);
+            ResultSet rsFemale = stmntFemale.executeQuery();
+            
+            Integer FemalePop = rsMale.getInt(1);
+            String FemaleVal = Integer.toString(FemalePop);
+            
+            String bothQuery = "SELECT COUNT(SEX) FROM RESIDENTS_DB "; 
+            PreparedStatement stmntBoth = conn.prepareStatement(bothQuery);
+            ResultSet rsBoth = stmntBoth.executeQuery();
+            
+            Integer BothPop = rsBoth.getInt(1);
+            String BothVal = Integer.toString(BothPop);
+            
+            
+                 while (rsMale.next()){
+                 maleField.setText(MaleVal);
+                 };
+                 
+                 while (rsFemale.next()){
+                 femaleField.setText(FemaleVal);
+                 };
+                 while (rsBoth.next()){
+                 bothField.setText(BothVal);
+                };
+            
+            rsMale.next();
+            rsFemale.next();
+            rsBoth.next();
+            
+        }
+        
+        catch(Exception e){
+            System.err.println(e);
+        }
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -520,21 +525,26 @@ public class Main_Reports extends javax.swing.JFrame {
     private javax.swing.JLabel ReportPage;
     private javax.swing.JPanel SideBar;
     private javax.swing.JPanel aboutus;
-    private javax.swing.JPanel barChartPanel;
+    private javax.swing.JTextField bothField;
     private javax.swing.JPanel database;
     private javax.swing.JPanel documents;
+    private javax.swing.JTextField femaleField;
     private javax.swing.JPanel home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel main;
+    private javax.swing.JTextField maleField;
     private javax.swing.JPanel officials;
-    private javax.swing.JPanel pieChartPanel;
     private javax.swing.JPanel reports;
     // End of variables declaration//GEN-END:variables
 }

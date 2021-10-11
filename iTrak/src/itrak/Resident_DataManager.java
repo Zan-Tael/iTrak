@@ -21,19 +21,12 @@ import org.imgscalr.Scalr;
 
 public class Resident_DataManager extends javax.swing.JFrame {
 
-    static final String USER = "SYSTEM"; //Database Username
-    static final String PASS = "HelloWorld1"; //Your Account Password
-    static final String DATABASE = "orcl"; //Database Name
-    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;
-    
-     /*static final String USER = "system"; //Database Username
-    static final String PASS = "pdbtip12345"; //Your Account Password
-    static final String DATABASE = "cdb"; //Database Name
-    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
-    static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;     
     
     public Resident_DataManager() {
         initComponents();
@@ -152,6 +145,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         lblID4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Resident: Data Manager");
         setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
@@ -160,54 +154,74 @@ public class Resident_DataManager extends javax.swing.JFrame {
         main.setRequestFocusEnabled(false);
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnInsert.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
+        btnInsert.setBackground(new java.awt.Color(51, 51, 51));
+        btnInsert.setFont(new java.awt.Font("Segoe UI Historic", 1, 16)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("Insert");
+        btnInsert.setContentAreaFilled(false);
+        btnInsert.setOpaque(true);
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertActionPerformed(evt);
             }
         });
-        main.add(btnInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 80, -1));
+        main.add(btnInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 310, 200, 30));
 
-        btnDelete.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
+        btnDelete.setBackground(new java.awt.Color(153, 0, 0));
+        btnDelete.setFont(new java.awt.Font("Segoe UI Historic", 1, 16)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
+        btnDelete.setContentAreaFilled(false);
+        btnDelete.setOpaque(true);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
-        main.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 81, -1));
+        main.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 200, 30));
 
-        btnUpdate.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
+        btnUpdate.setBackground(new java.awt.Color(51, 51, 51));
+        btnUpdate.setFont(new java.awt.Font("Segoe UI Historic", 1, 16)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
+        btnUpdate.setContentAreaFilled(false);
+        btnUpdate.setOpaque(true);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
-        main.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, -1, -1));
+        main.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 200, 30));
 
-        btnClear.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
+        btnClear.setBackground(new java.awt.Color(51, 51, 51));
+        btnClear.setFont(new java.awt.Font("Segoe UI Historic", 1, 16)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
         btnClear.setBorderPainted(false);
+        btnClear.setContentAreaFilled(false);
+        btnClear.setOpaque(true);
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
-        main.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 430, 81, -1));
+        main.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 650, 200, 30));
 
-        btnRefresh.setFont(new java.awt.Font("Segoe UI Historic", 0, 16)); // NOI18N
+        btnRefresh.setBackground(new java.awt.Color(51, 51, 51));
+        btnRefresh.setFont(new java.awt.Font("Segoe UI Historic", 1, 16)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
         btnRefresh.setBorder(null);
         btnRefresh.setBorderPainted(false);
+        btnRefresh.setContentAreaFilled(false);
+        btnRefresh.setOpaque(true);
         btnRefresh.setPreferredSize(new java.awt.Dimension(62, 27));
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
             }
         });
-        main.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, 80, 30));
+        main.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 270, 200, 30));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
@@ -477,7 +491,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         DataOutput.add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 180));
 
         nameField.setEditable(false);
-        nameField.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        nameField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nameField.setBorder(null);
         nameField.setOpaque(false);
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -485,7 +499,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
                 nameFieldActionPerformed(evt);
             }
         });
-        DataOutput.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 350, -1));
+        DataOutput.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 460, -1));
 
         txtID.setEditable(false);
         txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -503,7 +517,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
                 txtIDKeyTyped(evt);
             }
         });
-        DataOutput.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 50, -1));
+        DataOutput.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 50, 20));
 
         lblID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblID.setText("Contant Information");
@@ -513,7 +527,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         addressField.setBackground(new java.awt.Color(255, 255, 255));
         addressField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         addressField.setBorder(null);
-        DataOutput.add(addressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 300, -1));
+        DataOutput.add(addressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 300, -1));
 
         mobileField.setEditable(false);
         mobileField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -553,7 +567,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         lblID2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblID2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblID2.setText("ID");
-        DataOutput.add(lblID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 20, -1));
+        DataOutput.add(lblID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 20, 20));
 
         lblID3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblID3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -583,7 +597,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -691,7 +705,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
                 
                 byte[] image1x1 = result.getBytes("Image1");
                 BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth(), Img1x1.getHeight());
                 ImageIcon iconimage = new ImageIcon(Img1x1Final);
                 lblIcon.setIcon(iconimage);
             }
@@ -802,7 +816,7 @@ public class Resident_DataManager extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered

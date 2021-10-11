@@ -33,12 +33,10 @@ public class Officials_Update extends javax.swing.JFrame {
     public Officials_Update() {
         initComponents();
     }
-
-     
     static final String USER = "system"; //Database Username
-    static final String PASS = "pdbtip12345"; //Your Account Password
-    static final String DATABASE = "cdb"; //Database Name
-    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
     static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
@@ -158,9 +156,12 @@ public class Officials_Update extends javax.swing.JFrame {
         insert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setTitle("Officials: Update");
+        setMinimumSize(new java.awt.Dimension(0, 0));
+        setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
+        main.setPreferredSize(new java.awt.Dimension(1000, 700));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(61, 178, 255));
@@ -381,7 +382,12 @@ public class Officials_Update extends javax.swing.JFrame {
         jLabel4.setText("Profile Picture");
         Photo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 166, -1));
 
+        uploadPicture.setBackground(new java.awt.Color(51, 51, 51));
+        uploadPicture.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadPicture.setForeground(new java.awt.Color(255, 255, 255));
         uploadPicture.setText("UPLOAD");
+        uploadPicture.setContentAreaFilled(false);
+        uploadPicture.setOpaque(true);
         uploadPicture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadPictureActionPerformed(evt);
@@ -416,7 +422,12 @@ public class Officials_Update extends javax.swing.JFrame {
         fileNameSignature.setOpaque(false);
         Photo.add(fileNameSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 166, -1));
 
+        uploadSignature.setBackground(new java.awt.Color(51, 51, 51));
+        uploadSignature.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadSignature.setForeground(new java.awt.Color(255, 255, 255));
         uploadSignature.setText("UPLOAD");
+        uploadSignature.setContentAreaFilled(false);
+        uploadSignature.setOpaque(true);
         uploadSignature.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadSignatureActionPerformed(evt);
@@ -450,7 +461,7 @@ public class Officials_Update extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Contact Information");
-        Form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 190, -1));
+        Form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 190, -1));
         Form.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 150, -1));
 
         jLabel5.setText("Middle Name");
@@ -503,18 +514,18 @@ public class Officials_Update extends javax.swing.JFrame {
 
         jLabel3.setText("Civil Status*");
         Form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 90, -1));
-        Form.add(telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 160, -1));
+        Form.add(telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 160, -1));
 
         jLabel18.setText("Telephone Number");
-        Form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 150, -1));
-        Form.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, -1));
+        Form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 150, -1));
+        Form.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 160, -1));
 
         jLabel19.setText("Mobile Number");
-        Form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 150, -1));
-        Form.add(emailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 190, -1));
+        Form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 150, -1));
+        Form.add(emailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 190, -1));
 
         jLabel20.setText("Email Address");
-        Form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 150, -1));
+        Form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 150, -1));
         Form.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 530, 10));
 
         jLabel17.setText("Religion*");
@@ -548,7 +559,7 @@ public class Officials_Update extends javax.swing.JFrame {
         jLabel26.setText("Occupation");
         Form.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 100, -1));
         Form.add(occupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, -1));
-        Form.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 530, 10));
+        Form.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 530, 10));
 
         jLabel27.setText("First Name*");
         Form.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, -1));
@@ -556,31 +567,31 @@ public class Officials_Update extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Basic Information");
         Form.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, -1));
-        Form.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 530, 20));
+        Form.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 530, 20));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel29.setText("Additional Information");
-        Form.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 210, -1));
-        Form.add(sss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 160, -1));
+        Form.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
+        Form.add(sss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 160, -1));
 
         jLabel30.setText("SSS");
-        Form.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        Form.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         jLabel31.setText("PhilHealth");
-        Form.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 380, 60, -1));
-        Form.add(philHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 400, 160, -1));
+        Form.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 60, -1));
+        Form.add(philHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 160, -1));
 
         jLabel32.setText("TIN");
-        Form.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
-        Form.add(tin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 160, -1));
-        Form.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 70, -1));
+        Form.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+        Form.add(tin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 160, -1));
+        Form.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 70, -1));
 
         jLabel33.setText("Height");
-        Form.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+        Form.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         jLabel34.setText("Weight");
-        Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
-        Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 70, -1));
+        Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 70, -1));
 
         jLabel35.setText("INSERT ID:");
         Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 60, 20));
@@ -593,60 +604,75 @@ public class Officials_Update extends javax.swing.JFrame {
             }
         });
         Form.add(Find, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 20, 60, -1));
-        Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 130, -1));
+        Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 160, -1));
 
         jLabel37.setText("Username");
-        Form.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
+        Form.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, -1));
 
         jLabel38.setText("Password");
-        Form.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
-        Form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 130, -1));
+        Form.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, -1, -1));
+        Form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 160, -1));
 
         jLabel41.setText("Position");
-        Form.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, -1));
-        Form.add(position, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, -1));
+        Form.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        Form.add(position, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 180, -1));
 
         jLabel40.setText("Start Date");
-        Form.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
-        Form.add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 130, -1));
+        Form.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 50, -1));
+        Form.add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 50, -1));
 
         jLabel36.setText("End Date");
-        Form.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, -1, -1));
+        Form.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 50, -1));
 
         end.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endActionPerformed(evt);
             }
         });
-        Form.add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 130, -1));
-        Form.add(posstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 130, -1));
+        Form.add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 50, -1));
+        Form.add(posstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 130, -1));
 
         jLabel42.setText("Position Status");
-        Form.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
+        Form.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, -1, -1));
 
         jLabel39.setText("Admin");
-        Form.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, -1, -1));
+        Form.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, -1, -1));
 
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminActionPerformed(evt);
             }
         });
-        Form.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 130, -1));
+        Form.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 460, 50, -1));
 
-        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
-
+        insert.setBackground(new java.awt.Color(51, 51, 51));
+        insert.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        insert.setForeground(new java.awt.Color(255, 255, 255));
         insert.setText("UPDATE");
+        insert.setContentAreaFilled(false);
+        insert.setOpaque(true);
         insert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertActionPerformed(evt);
             }
         });
-        main.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 680, 530, -1));
+        Form.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 530, -1));
 
-        getContentPane().add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
@@ -728,7 +754,7 @@ public class Officials_Update extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered
@@ -802,7 +828,7 @@ public class Officials_Update extends javax.swing.JFrame {
             +"FIRSTNAME = ?, MIDDLENAME = ?, LASTNAME = ?, SUFFIXNAME = ?, BIRTHDATE = ?, GENDER = ?, SEX = ?, HOUSENUMBER = ?, STREET = ?, "
             +"CIVILSTATUS = ?, RELIGION = ?, STATUS = ?, NATIONALITY = ?, OCCUPATION = ?, SSS = ?, PHILHEALTH = ?, TIN = ?, TELEPHONENUMBER = ?,"
             +"MOBILENUMBER = ?, HEIGHT = ?, WEIGHT = ?, EMAILADDRESS = ?, IMAGE1 = ?, IMAGE2 = ?, USERNAME = ?, PASSWORD = ?, POSITION = ?,"
-            +"STARTDATE = ?, ENDDATE = ?, POS_STATUS = ?, ADMIN = ? ";
+            +"STARTDATE = ?, ENDDATE = ?, POS_STATUS = ?, ADMIN = ? WHERE ID =" + idField.getText();
 
             PreparedStatement stmnt = conn.prepareStatement(query);
 
@@ -823,10 +849,16 @@ public class Officials_Update extends javax.swing.JFrame {
             stmnt.setString(15, sss.getText());
             stmnt.setString(16, philHealth.getText());
             stmnt.setString(17, tin.getText());
-            stmnt.setString(18, telephone.getText());
-            stmnt.setString(19, mobile.getText());
-            stmnt.setString(20, height.getText());
-            stmnt.setString(21, weight.getText());
+            
+            int tele = Integer.parseInt(telephone.getText());
+            stmnt.setInt(18, tele);
+            int mob = Integer.parseInt(mobile.getText());
+            stmnt.setInt(19, mob);
+            int h = Integer.parseInt(height.getText());
+            stmnt.setInt(20, h);
+            int w = Integer.parseInt(weight.getText());
+            stmnt.setInt(21, w);
+            
             stmnt.setString(22, emailAddress.getText());
             stmnt.setString(25, username.getText());
             stmnt.setString(26, password.getText());
@@ -861,7 +893,10 @@ public class Officials_Update extends javax.swing.JFrame {
 
             stmnt.execute();
             conn.close();
-            System.out.println("Tama ka na pre");
+            JOptionPane.showMessageDialog(this,"Updated Succesfully");
+            
+            this.dispose();
+            new Officials_DataManager().setVisible(true);
 
         }
         catch(Exception e){
@@ -906,8 +941,8 @@ public class Officials_Update extends javax.swing.JFrame {
                 String usernameVal = rs.getString("USERNAME");
                 String passwordVal = rs.getString("PASSWORD");
                 String positionVal = rs.getString("POSITION");
-                String startVal = rs.getString("START_DATE");
-                String endVal = rs.getString("END_DATE");
+                String startVal = rs.getString("STARTDATE");
+                String endVal = rs.getString("ENDDATE");
                 String posstatVal = rs.getString("POSITION_STATUS");
                 String adminVal = rs.getString("ADMIN");
                         
@@ -979,7 +1014,7 @@ public class Officials_Update extends javax.swing.JFrame {
 
                 byte[] image1x1 = rs.getBytes("Image1");
                 BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+                BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth(), Img1x1.getHeight());
                 ImageIcon iconimage1x1 = new ImageIcon(Img1x1Final);
                 img1x1.setIcon(iconimage1x1);
 
@@ -995,7 +1030,6 @@ public class Officials_Update extends javax.swing.JFrame {
         }
 
         catch(Exception e){
-            JOptionPane.showMessageDialog(this,"Error ka nanaman pards");
             System.out.println(e);
         }
 
@@ -1020,7 +1054,7 @@ public class Officials_Update extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

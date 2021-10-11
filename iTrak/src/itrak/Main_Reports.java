@@ -30,13 +30,12 @@ import org.jfree.data.jdbc.JDBCPieDataset;
  * @author ZAEL
  */
 public class Main_Reports extends javax.swing.JFrame {
-    
-    static final String USER = "SYSTEM"; //Database Username
-    static final String PASS = "HelloWorld1"; //Your Account Password
-    static final String DATABASE = "orcl"; //Database Name
-    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
 
     /**
      * Creates new form Main_Reports
@@ -87,6 +86,7 @@ public class Main_Reports extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Reports");
 
         main.setBackground(new java.awt.Color(255, 255, 255));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -419,7 +419,7 @@ public class Main_Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered
@@ -434,43 +434,11 @@ public class Main_Reports extends javax.swing.JFrame {
         // TODO add your handling code here:
            try{
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            String maleQuery = "SELECT COUNT(*) FROM RESIDENTS_DB WHERE SEX = 'M' "; 
+            String maleQuery = "SELECT COUNT(*) FROM RESIDENTS_DB"; 
             PreparedStatement stmntMale = conn.prepareStatement(maleQuery);
             ResultSet rsMale = stmntMale.executeQuery();
             
-            Integer MalePop = rsMale.getInt(1);
-            String MaleVal = Integer.toString(MalePop);
-            
-            String femaleQuery = "SELECT COUNT(*) FROM RESIDENTS_DB WHERE SEX = 'F' "; 
-            PreparedStatement stmntFemale = conn.prepareStatement(femaleQuery);
-            ResultSet rsFemale = stmntFemale.executeQuery();
-            
-            Integer FemalePop = rsMale.getInt(1);
-            String FemaleVal = Integer.toString(FemalePop);
-            
-            String bothQuery = "SELECT COUNT(SEX) FROM RESIDENTS_DB "; 
-            PreparedStatement stmntBoth = conn.prepareStatement(bothQuery);
-            ResultSet rsBoth = stmntBoth.executeQuery();
-            
-            Integer BothPop = rsBoth.getInt(1);
-            String BothVal = Integer.toString(BothPop);
-            
-            
-                 while (rsMale.next()){
-                 maleField.setText(MaleVal);
-                 };
-                 
-                 while (rsFemale.next()){
-                 femaleField.setText(FemaleVal);
-                 };
-                 while (rsBoth.next()){
-                 bothField.setText(BothVal);
-                };
-            
-            rsMale.next();
-            rsFemale.next();
-            rsBoth.next();
-            
+            maleField.setText(rsMale.toString());
         }
         
         catch(Exception e){
@@ -490,7 +458,7 @@ public class Main_Reports extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

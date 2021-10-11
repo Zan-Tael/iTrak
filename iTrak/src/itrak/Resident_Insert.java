@@ -33,21 +33,12 @@ public class Resident_Insert extends javax.swing.JFrame {
     /**
      * Creates new form JFrameForm
      */
-    
-     
-       static final String USER = "SYSTEM"; //Database Username
-    static final String PASS = "HelloWorld1"; //Your Account Password
-    static final String DATABASE = "orcl"; //Database Name
-    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;
-    
-     /*static final String USER = "system"; //Database Username
-    static final String PASS = "pdbtip12345"; //Your Account Password
-    static final String DATABASE = "cdb"; //Database Name
-    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
-    static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     
     public Resident_Insert() {
         initComponents();
@@ -152,6 +143,7 @@ public class Resident_Insert extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Resident: Insert");
         setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -167,7 +159,12 @@ public class Resident_Insert extends javax.swing.JFrame {
         jLabel4.setText("Profile Picture");
         Photo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 166, -1));
 
+        uploadPicture.setBackground(new java.awt.Color(51, 51, 51));
+        uploadPicture.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadPicture.setForeground(new java.awt.Color(255, 255, 255));
         uploadPicture.setText("UPLOAD");
+        uploadPicture.setContentAreaFilled(false);
+        uploadPicture.setOpaque(true);
         uploadPicture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadPictureActionPerformed(evt);
@@ -201,7 +198,12 @@ public class Resident_Insert extends javax.swing.JFrame {
         fileNameSignature.setOpaque(false);
         Photo.add(fileNameSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 166, -1));
 
+        uploadSignature.setBackground(new java.awt.Color(51, 51, 51));
+        uploadSignature.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadSignature.setForeground(new java.awt.Color(255, 255, 255));
         uploadSignature.setText("UPLOAD");
+        uploadSignature.setContentAreaFilled(false);
+        uploadSignature.setOpaque(true);
         uploadSignature.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadSignatureActionPerformed(evt);
@@ -366,7 +368,12 @@ public class Resident_Insert extends javax.swing.JFrame {
         Form.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
         Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 70, -1));
 
+        insert.setBackground(new java.awt.Color(51, 51, 51));
+        insert.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        insert.setForeground(new java.awt.Color(255, 255, 255));
         insert.setText("INSERT");
+        insert.setContentAreaFilled(false);
+        insert.setOpaque(true);
         insert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertActionPerformed(evt);
@@ -672,7 +679,10 @@ public class Resident_Insert extends javax.swing.JFrame {
             
             stmnt.execute();
             conn.close();
-            System.out.println("Tama ka na pre");
+            JOptionPane.showMessageDialog(this,"Inserted Succesfully");
+            
+            this.dispose();
+            new Resident_DataManager().setVisible(true);
 
         }
         catch(Exception e){
@@ -794,7 +804,7 @@ public class Resident_Insert extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered

@@ -21,6 +21,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -37,14 +38,12 @@ public class Resident_Update extends javax.swing.JFrame {
     /**
      * Creates new form JFrameForm
      */
-    
-     
-    static final String USER = "SYSTEM"; //Database Username
-    static final String PASS = "HelloWorld1"; //Your Account Password
-    static final String DATABASE = "orcl"; //Database Name
-    static final String SERVER_IP = "dacsy"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;  
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE; 
     
      /*static final String USER = "system"; //Database Username
     static final String PASS = "pdbtip12345"; //Your Account Password
@@ -159,6 +158,7 @@ public class Resident_Update extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Resident: Update");
         setPreferredSize(new java.awt.Dimension(1000, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -174,7 +174,12 @@ public class Resident_Update extends javax.swing.JFrame {
         jLabel4.setText("Profile Picture");
         Photo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 166, -1));
 
+        uploadPicture.setBackground(new java.awt.Color(51, 51, 51));
+        uploadPicture.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadPicture.setForeground(new java.awt.Color(255, 255, 255));
         uploadPicture.setText("UPLOAD");
+        uploadPicture.setContentAreaFilled(false);
+        uploadPicture.setOpaque(true);
         uploadPicture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadPictureActionPerformed(evt);
@@ -193,7 +198,6 @@ public class Resident_Update extends javax.swing.JFrame {
         Photo.add(fileName1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 166, -1));
 
         img1x1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        img1x1.setText("PIRMA HERE");
         img1x1.setToolTipText("");
         img1x1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Photo.add(img1x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 166, 166));
@@ -209,7 +213,12 @@ public class Resident_Update extends javax.swing.JFrame {
         fileNameSignature.setOpaque(false);
         Photo.add(fileNameSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 166, -1));
 
+        uploadSignature.setBackground(new java.awt.Color(51, 51, 51));
+        uploadSignature.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadSignature.setForeground(new java.awt.Color(255, 255, 255));
         uploadSignature.setText("UPLOAD");
+        uploadSignature.setContentAreaFilled(false);
+        uploadSignature.setOpaque(true);
         uploadSignature.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadSignatureActionPerformed(evt);
@@ -218,7 +227,6 @@ public class Resident_Update extends javax.swing.JFrame {
         Photo.add(uploadSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 166, -1));
 
         imageSignature.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageSignature.setText("PIRMA HERE");
         imageSignature.setToolTipText("");
         imageSignature.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Photo.add(imageSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 166, 166));
@@ -375,7 +383,12 @@ public class Resident_Update extends javax.swing.JFrame {
         Form.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
         Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 70, -1));
 
-        insert.setText("UPDATE");
+        insert.setBackground(new java.awt.Color(51, 51, 51));
+        insert.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        insert.setForeground(new java.awt.Color(255, 255, 255));
+        insert.setText("INSERT");
+        insert.setContentAreaFilled(false);
+        insert.setOpaque(true);
         insert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertActionPerformed(evt);
@@ -387,13 +400,18 @@ public class Resident_Update extends javax.swing.JFrame {
         Form.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 60, 20));
         Form.add(idField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 40, -1));
 
+        Find.setBackground(new java.awt.Color(51, 51, 51));
+        Find.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        Find.setForeground(new java.awt.Color(255, 255, 255));
         Find.setText("FIND");
+        Find.setContentAreaFilled(false);
+        Find.setOpaque(true);
         Find.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FindActionPerformed(evt);
             }
         });
-        Form.add(Find, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 20, 60, -1));
+        Form.add(Find, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 18, 60, -1));
 
         jPanel3.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 590));
 
@@ -676,7 +694,7 @@ public class Resident_Update extends javax.swing.JFrame {
             String query = "UPDATE residents_db SET "
             +"FIRSTNAME = ?, MIDDLENAME = ?, LASTNAME = ?, SUFFIXNAME = ?, BIRTHDATE = ?, GENDER = ?, SEX = ?, HOUSENUMBER = ?, STREET = ?, "
             +"CIVILSTATUS = ?, RELIGION = ?, STATUS = ?, NATIONALITY = ?, OCCUPATION = ?, SSS = ?, PHILHEALTH = ?, TIN = ?, TELEPHONENUMBER = ?,"
-            +" MOBILENUMBER = ?, HEIGHT = ?, WEIGHT = ?, EMAILADDRESS = ?, IMAGE1 = ?, IMAGE2 = ? ";
+            +" MOBILENUMBER = ?, HEIGHT = ?, WEIGHT = ?, EMAILADDRESS = ?, IMAGE1 = ?, IMAGE2 = ? WHERE ID =" + idField.getText();
 
             PreparedStatement stmnt = conn.prepareStatement(query);
 
@@ -701,6 +719,7 @@ public class Resident_Update extends javax.swing.JFrame {
             stmnt.setString(19, mobile.getText());
             stmnt.setString(20, height.getText());
             stmnt.setString(21, weight.getText());
+            
             stmnt.setString(22, emailAddress.getText());
 
             InputStream onebyone = new FileInputStream(""+fileName1x1.getText()+"");
@@ -727,7 +746,10 @@ public class Resident_Update extends javax.swing.JFrame {
 
             stmnt.execute();
             conn.close();
-            System.out.println("Tama ka na pre");
+            JOptionPane.showMessageDialog(this,"Updated Succesfully");
+            
+            this.dispose();
+            new Resident_DataManager().setVisible(true);
 
         }
         catch(Exception e){
@@ -824,7 +846,7 @@ public class Resident_Update extends javax.swing.JFrame {
                  
                   byte[] image1x1 = rs.getBytes("Image1");
                      BufferedImage Img1x1 = ImageIO.read(new ByteArrayInputStream(image1x1));
-                     BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth()/2, Img1x1.getHeight()/2);
+                     BufferedImage Img1x1Final = Scalr.resize(Img1x1, Scalr.Method.BALANCED, Img1x1.getWidth(), Img1x1.getHeight());
                      ImageIcon iconimage1x1 = new ImageIcon(Img1x1Final);
                      img1x1.setIcon(iconimage1x1);  
                      
@@ -926,7 +948,7 @@ public class Resident_Update extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered

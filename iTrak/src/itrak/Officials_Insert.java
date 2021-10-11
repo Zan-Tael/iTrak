@@ -14,22 +14,18 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import static itrak.Resident_DataManager.DB_URL;
-import static itrak.Resident_DataManager.PASS;
-import static itrak.Resident_DataManager.USER;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ZAEL
  */
 public class Officials_Insert extends javax.swing.JFrame {
-
-    
-     /*static final String USER = "system"; //Database Username
-    static final String PASS = "pdbtip12345"; //Your Account Password
-    static final String DATABASE = "cdb"; //Database Name
-    static final String SERVER_IP = "192.168.56.1"; //Your Database Server IP (run ipconfig in cmd)
+    static final String USER = "system"; //Database Username
+    static final String PASS = "Admin123"; //Your Account Password
+    static final String DATABASE = "ztt"; //Database Name
+    static final String SERVER_IP = "localhost"; //Your Database Server IP (run ipconfig in cmd)
     static final String PORT = "1521";
-    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   */
+    static final String DB_URL = "jdbc:oracle:thin:@" + SERVER_IP + ":" + PORT + ":" +DATABASE;   
     /**
      * Creates new form Officials_Insert
      */
@@ -135,22 +131,25 @@ public class Officials_Insert extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         end = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
-        jLabel38 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
-        jLabel39 = new javax.swing.JLabel();
-        admin = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         start = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         position = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         posstat = new javax.swing.JTextField();
+        password = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        admin = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Officials: Insert");
+        setResizable(false);
 
         main.setBackground(new java.awt.Color(255, 255, 255));
+        main.setPreferredSize(new java.awt.Dimension(1000, 700));
         main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(61, 178, 255));
@@ -371,7 +370,12 @@ public class Officials_Insert extends javax.swing.JFrame {
         jLabel4.setText("Profile Picture");
         Photo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 166, -1));
 
+        uploadPicture.setBackground(new java.awt.Color(51, 51, 51));
+        uploadPicture.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadPicture.setForeground(new java.awt.Color(255, 255, 255));
         uploadPicture.setText("UPLOAD");
+        uploadPicture.setContentAreaFilled(false);
+        uploadPicture.setOpaque(true);
         uploadPicture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadPictureActionPerformed(evt);
@@ -405,7 +409,12 @@ public class Officials_Insert extends javax.swing.JFrame {
         fileNameSignature.setOpaque(false);
         Photo.add(fileNameSignature, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 166, -1));
 
+        uploadSignature.setBackground(new java.awt.Color(51, 51, 51));
+        uploadSignature.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        uploadSignature.setForeground(new java.awt.Color(255, 255, 255));
         uploadSignature.setText("UPLOAD");
+        uploadSignature.setContentAreaFilled(false);
+        uploadSignature.setOpaque(true);
         uploadSignature.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadSignatureActionPerformed(evt);
@@ -438,7 +447,7 @@ public class Officials_Insert extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Contact Information");
-        Form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 190, -1));
+        Form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 190, -1));
         Form.add(middleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 150, -1));
 
         jLabel5.setText("Middle Name");
@@ -491,18 +500,18 @@ public class Officials_Insert extends javax.swing.JFrame {
 
         jLabel3.setText("Civil Status*");
         Form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 90, -1));
-        Form.add(telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 160, -1));
+        Form.add(telephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 160, -1));
 
         jLabel18.setText("Telephone Number");
-        Form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 150, -1));
-        Form.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, -1));
+        Form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 150, -1));
+        Form.add(mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 160, -1));
 
         jLabel19.setText("Mobile Number");
-        Form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 150, -1));
-        Form.add(emailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 190, -1));
+        Form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 150, -1));
+        Form.add(emailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 190, -1));
 
         jLabel20.setText("Email Address");
-        Form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 150, -1));
+        Form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 150, -1));
         Form.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 530, 10));
 
         jLabel17.setText("Religion*");
@@ -536,7 +545,7 @@ public class Officials_Insert extends javax.swing.JFrame {
         jLabel26.setText("Occupation");
         Form.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 100, -1));
         Form.add(occupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, -1));
-        Form.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 530, 10));
+        Form.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 530, 10));
 
         jLabel27.setText("First Name*");
         Form.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, -1));
@@ -544,96 +553,106 @@ public class Officials_Insert extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Basic Information");
         Form.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, -1));
-        Form.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 530, 20));
-        Form.add(sss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 160, -1));
+        Form.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 530, 20));
+        Form.add(sss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 160, -1));
 
         jLabel30.setText("SSS");
-        Form.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        Form.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         jLabel31.setText("PhilHealth");
-        Form.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 380, 60, -1));
-        Form.add(philHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 400, 160, -1));
+        Form.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 60, -1));
+        Form.add(philHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 160, -1));
 
         jLabel32.setText("TIN");
-        Form.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
-        Form.add(tin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 160, -1));
-        Form.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 70, -1));
+        Form.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
+        Form.add(tin, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 160, -1));
+        Form.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 70, -1));
 
         jLabel33.setText("Height");
-        Form.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+        Form.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel34.setText("End Date");
-        Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
-        Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 70, -1));
+        Form.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, -1, -1));
+        Form.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 70, -1));
 
+        insert.setBackground(new java.awt.Color(51, 51, 51));
+        insert.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        insert.setForeground(new java.awt.Color(255, 255, 255));
         insert.setText("INSERT");
+        insert.setContentAreaFilled(false);
+        insert.setOpaque(true);
         insert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertActionPerformed(evt);
             }
         });
-        Form.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 530, -1));
+        Form.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 530, -1));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel35.setText("Additional Information");
-        Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 210, -1));
+        Form.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 210, -1));
 
         end.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endActionPerformed(evt);
             }
         });
-        Form.add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 130, -1));
+        Form.add(end, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, 50, -1));
 
         jLabel36.setText("Weight");
-        Form.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
+        Form.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
+
+        jLabel40.setText("Start Date");
+        Form.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
+        Form.add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 50, -1));
+
+        jLabel41.setText("Position");
+        Form.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        Form.add(position, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 180, -1));
+
+        jLabel42.setText("Position Status");
+        Form.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, -1, -1));
+        Form.add(posstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 130, -1));
+        Form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 160, -1));
+
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
+        Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 160, -1));
 
         jLabel37.setText("Username");
-        Form.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
-        Form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 130, -1));
+        Form.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
 
         jLabel38.setText("Password");
-        Form.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, -1));
-        Form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 130, -1));
-
-        jLabel39.setText("Admin");
-        Form.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, -1, -1));
+        Form.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
 
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminActionPerformed(evt);
             }
         });
-        Form.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 50, -1));
+        Form.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, 50, -1));
 
-        jLabel40.setText("Start Date");
-        Form.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
-        Form.add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, 130, -1));
+        jLabel39.setText("Admin");
+        Form.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, -1, -1));
 
-        jLabel41.setText("Position");
-        Form.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
-        Form.add(position, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 130, -1));
-
-        jLabel42.setText("Position Status");
-        Form.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
-        Form.add(posstat, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 130, -1));
-
-        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 570, 640));
+        main.add(Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 570, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 1071, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePageMouseClicked
@@ -715,7 +734,7 @@ public class Officials_Insert extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPageMouseExited
 
     private void LogoutPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutPageMouseClicked
 
     private void LogoutPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutPageMouseEntered
@@ -850,7 +869,10 @@ public class Officials_Insert extends javax.swing.JFrame {
 
             stmnt.execute();
             conn.close();
-            System.out.println("Tama ka na pre");
+            JOptionPane.showMessageDialog(this,"Inserted Succesfully");
+            
+            this.dispose();
+            new Officials_DataManager().setVisible(true);
 
         }
         catch(Exception e){
@@ -866,6 +888,10 @@ public class Officials_Insert extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adminActionPerformed
 
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -877,7 +903,7 @@ public class Officials_Insert extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
